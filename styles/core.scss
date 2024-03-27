@@ -97,7 +97,8 @@ body.home-page {
 
   .info {
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
     width: 100vw;
     padding: 2.5vh 60px 5vh;
     transition: opacity 0.2s ease-in-out;
