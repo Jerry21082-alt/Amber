@@ -32,7 +32,6 @@ const page = () => {
   const handleSelect = (item) => {
     setIsSelected(item);
   };
-  // const []
 
   return (
     <div id="barba-wrapper" aria-live="polite">

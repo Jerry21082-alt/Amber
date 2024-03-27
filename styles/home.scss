@@ -121,9 +121,9 @@
 
     transition: color 0.5s, opacity 0.5s;
 
-    @supports ((-webkit-text-stroke: 3px #000) or (text-stroke: 3px #000)) {
-      -webkit-text-stroke: 3px #000;
-      text-stroke: 3px #000;
+    @supports ((-webkit-text-stroke: 2px #000) or (text-stroke: 2px #000)) {
+      -webkit-text-stroke: 2px #000;
+      text-stroke: 2px #000;
     }
   }
 

@@ -208,6 +208,11 @@ body.light-mode {
     color: #000;
   }
 
+  .ui .copyright {
+    color: #151515;
+    z-index: 1000;
+  }
+
   .mobile-nav-inner::after,
   .mobile-nav-inner::before,
   .mobile-nav-inner {
@@ -227,7 +232,7 @@ body.light-mode {
   }
 
   @media screen and (max-width: 767px) {
-    &.home-page .projectLi.isSelected .project-container a,
+    &.home-page .project-container a,
     &.home-page .projectLi.isSelected:hover .project-container a {
       @supports (
         (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)

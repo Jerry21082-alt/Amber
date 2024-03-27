@@ -97,8 +97,7 @@ body.home-page {
 
   .info {
     justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: column;
+    align-items: flex-end;
     width: 100vw;
     padding: 2.5vh 60px 5vh;
     transition: opacity 0.2s ease-in-out;
@@ -317,8 +316,8 @@ body.home-page {
     }
 
     .circle {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
       margin: 0 auto;
       border-radius: 50%;
       border-top: 4px solid $offwhite;
@@ -528,6 +527,8 @@ body.home-page {
       background-color: rgba(#f2f2f2, 0.95);
       opacity: 0;
       pointer-events: none;
+      flex-direction: column;
+      align-items: flex-start;
       flex-wrap: wrap;
     }
 
@@ -630,8 +631,8 @@ body.home-page {
 
 @keyframes breath {
   0% {
-    opacity: 0;
-    transform: scale(0);
+    opacity: 1;
+    transform: scale(0.5);
   }
 
   100% {

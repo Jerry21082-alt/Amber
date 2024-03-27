@@ -42,6 +42,7 @@ const RootLayout = ({ children }) => {
           setUiMode={setUiMode}
           setMobileNavOpen={setMobileNavOpen}
           setShowAbout={setShowAbout}
+          uiMode={uiMode}
         />
         <main>
           <div>{children}</div>
