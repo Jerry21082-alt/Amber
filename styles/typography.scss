@@ -1,3 +1,9 @@
+@font-face {
+  font-family: smallText;
+  src: url("../public/Berthold-akzidenz-grotesk-be-condensed.ttf");
+  font-style: normal;
+}
+
 ::-moz-selection {
   background: #fff;
 }
@@ -84,4 +90,18 @@ h5 {
 
 h6 {
   font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: smallText, sans-serif;
+  font-weight: 500;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
 }

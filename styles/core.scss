@@ -3,7 +3,13 @@ $ultra: #4801ff;
 
 @font-face {
   font-family: smallText;
-  src: url("../public/Chopin-Light.ttf");
+  src: url("../public/Berthold-akzidenz-grotesk-be-condensed.ttf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RONORGERIONDEMO;
+  src: url("../public/RONORGERIONDEMO-Regular.otf");
   font-style: normal;
 }
 
@@ -82,6 +88,7 @@ body.home-page {
     left: 60px;
     z-index: 1;
     font-size: 30px;
+    font-family: RONORGERIONDEMO;
     text-decoration: none;
     line-height: 0.85em;
     backface-visibility: hidden;
@@ -355,6 +362,21 @@ body.home-page {
         transform: rotate(30deg);
       }
     }
+  }
+}
+
+body:not(.home-page):not(.journal-page):not(.aboutShow) {
+  &.loading {
+    .basicScroll {
+      .btn-page-back {
+        transform: translateX(calc(5vw + 60px));
+      }
+    }
+  }
+
+  .basicScroll .btn-page-back {
+    z-index: 9999;
+    transform: translateX(0);
   }
 }
 

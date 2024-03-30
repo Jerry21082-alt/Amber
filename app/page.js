@@ -1,37 +1,20 @@
 "use client";
 
-import About from "@/components/About";
+import { projects } from "@/constants";
 import Link from "next/link";
-import { useState } from "react";
-
-const projects = [
-  {
-    name1: "META",
-    name2: "FORCE",
-    year: "2022",
-  },
-  {
-    name1: "SCAN",
-    name2: "MATE",
-    year: "2023",
-  },
-  {
-    name1: "DIGITAL",
-    name2: "HUB",
-    year: "2024",
-  },
-  {
-    name1: "DANCE",
-    name2: "TORE",
-    year: "2023",
-  },
-];
+import { useEffect, useState } from "react";
 
 const page = () => {
   const [isSelected, setIsSelected] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
+
   const handleSelect = (item) => {
     setIsSelected(item);
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div id="barba-wrapper" aria-live="polite">
@@ -51,9 +34,9 @@ const page = () => {
                 style={{ transform: "translate3d(0px, -0.0019px, 0px)" }}
               >
                 <ul className="projects">
-                  {projects.map((project) => (
+                  {projects.map((project, i) => (
                     <li
-                      key={project.name1}
+                      key={i}
                       className={`projectLi ${
                         isSelected === project
                           ? "isSelected"
@@ -64,14 +47,19 @@ const page = () => {
                       keydata-barba="HomeTransition"
                     >
                       <div className="project-container">
-                        <Link
-                          onClick={() => handleSelect(project)}
-                          href="/"
-                          data-info={project.year}
-                          data-barba="HomeTransition"
-                        >
-                          {project.name1} <br /> {project.name2}
-                        </Link>
+                        {isMounted && (
+                          <Link
+                            onClick={() => handleSelect(project)}
+                            href={{
+                              pathname: `/projects/${project.id}`,
+                              id: project.id,
+                            }}
+                            data-info={project.productionYear}
+                            data-barba="HomeTransition"
+                          >
+                            {project.title1} <br /> {project.title2}
+                          </Link>
+                        )}
                       </div>
                     </li>
                   ))}

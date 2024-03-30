@@ -9,7 +9,7 @@ $ultra: #4801ff;
 
 @font-face {
   font-family: smallText;
-  src: url("../public/Gravity-Regular.otf");
+  src: url("../public/Berthold-akzidenz-grotesk-be-condensed.ttf");
   font-style: normal;
 }
 
@@ -38,10 +38,45 @@ body {
   background-color: $offwhite;
   overflow-x: hidden;
   transition: background-color 0.5s ease;
+  font-family: smallText, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 a {
   text-decoration: none;
+}
+
+body:not(.isMobile) {
+  .basicScroll {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+
+.btn-box {
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.basicScroll .content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // will-change: transform;
+}
+
+.basicScroll .container {
+  position: relative;
+  width: 100%;
+  transform: translateZ(0);
 }
 
 .ui {
@@ -219,7 +254,7 @@ body.light-mode {
     background: #151515;
   }
 
-  &.home-page .projectLi.isSelected .project-container a,
+  &.home-page .projectLi.isSelected .barba-container a,
   &.home-page .projectLi.isSelected:hover .project-container a {
     @supports (
       (-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515)

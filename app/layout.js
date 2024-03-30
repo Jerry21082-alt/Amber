@@ -3,12 +3,14 @@
 import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { globalContext } from "@/components/useStateContext/appContext";
 
 import "./global.scss";
 import "../styles/core.scss";
 import "../styles/home.scss";
 import "../styles/about.scss";
 import "../styles/typography.scss";
+import "../styles/work.scss";
 
 import { useEffect, useState } from "react";
 import About from "@/components/About";

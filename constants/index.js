@@ -1,5 +1,8 @@
+import { getRandomId } from "@/helpers";
+
 export const projects = [
   {
+    id: 1,
     title1: "Digital",
     title2: "Nest",
     href: "/",
@@ -7,6 +10,7 @@ export const projects = [
     productionYear: 2023,
   },
   {
+    id: 2,
     title1: "Scan",
     title2: "Mate",
     href: "/",
@@ -14,6 +18,7 @@ export const projects = [
     productionYear: 2022,
   },
   {
+    id: 3,
     title1: "Crypto",
     title2: "Verse",
     href: "/",
@@ -21,6 +26,7 @@ export const projects = [
     productionYear: 2023,
   },
   {
+    id: 4,
     title1: "Dance",
     title2: "Academy",
     href: "/",
