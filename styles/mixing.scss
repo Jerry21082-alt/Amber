@@ -1,0 +1,67 @@
+/* Global */
+
+@font-face {
+  font-family: finalFantacy;
+  src: url("../public/RONORGERIONDEMO-Regular.otf");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: extended;
+  src: url("../public/Berthold-akzidenz-grotesk-be-medium-extended.ttf");
+  font-style: normal;
+}
+
+@mixin hide-on-desktop {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+@mixin hide-on-mobile {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+/* Layout */
+
+@mixin clear-fix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    display: block;
+    clear: both;
+    height: 1px;
+    margin-top: -1px;
+    visibility: hidden;
+  }
+
+  & {
+    *zoom: 1;
+  }
+}
+
+/* Fonts */
+
+@mixin akzidenzGrotesk {
+  font-family: extended, sans-serif;
+}
+
+@mixin drukWideMedium {
+  font-family: extended;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@mixin drukWideSuper {
+  font-family: extended;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+}

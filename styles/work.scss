@@ -130,6 +130,7 @@ $offwhite: #f2f2f2;
 
     .credits span {
       display: block;
+      width: 100vw;
     }
 
     .credits .title {
@@ -181,6 +182,22 @@ $offwhite: #f2f2f2;
     }
   }
 
+  @media screen and (max-width: 1200px) {
+    .intro {
+      .summary {
+        flex-wrap: wrap;
+      }
+
+      .col-2 {
+        margin-top: 1em;
+      }
+
+      .credits span:not(.title) {
+        margin-top: 5px;
+      }
+    }
+  }
+
   @media screen and (max-height: 768px) {
     .hero {
       min-height: 418px;
@@ -193,7 +210,7 @@ $offwhite: #f2f2f2;
     ) {
       .hero .title {
         -webkit-text-stroke: 0.03em #000;
-        text-stroke: 0.03em #000;
+        // text-stroke: 0.03em #000;
       }
     }
   }

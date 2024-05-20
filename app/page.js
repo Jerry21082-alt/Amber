@@ -51,8 +51,12 @@ const page = () => {
                           <Link
                             onClick={() => handleSelect(project)}
                             href={{
-                              pathname: `/projects/${project.id}`,
-                              id: project.id,
+                              pathname: `/projects/${project.title1
+                                .concat(project.title2)
+                                .toLocaleLowerCase()}`,
+                              id: project.title1
+                                .concat(project.title2)
+                                .toLocaleLowerCase(),
                             }}
                             data-info={project.productionYear}
                             data-barba="HomeTransition"
