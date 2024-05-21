@@ -39,7 +39,7 @@ $offwhite: #f2f2f2;
       background-color: $offwhite;
       transform: scaleY(1);
       transform-origin: center top;
-      // animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s forwards;
+      animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s forwards;
     }
 
     .title-container {
@@ -147,6 +147,15 @@ $offwhite: #f2f2f2;
     }
   }
 
+  @keyframes scaleUp {
+    0% {
+      transform: scaleY(1);
+    }
+    100% {
+      transform: scaleY(0);
+    }
+  }
+
   @media screen and (max-width: 767px) {
     .hero {
       height: calc(90vh - 5vw - 71px);
@@ -232,23 +241,20 @@ $offwhite: #f2f2f2;
   }
 }
 
-body:not(.loading) {
-  .case-study {
-    .hero {
-      &:after {
-        animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s
-          forwards;
-      }
+.case-study {
+  .hero {
+    &:after {
+      animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0.3s
+        forwards;
+    }
 
-      .title {
-        animation: fadeIn 1s forwards;
-      }
+    .title {
+      animation: fadeIn 1s forwards;
     }
   }
 }
 
 .parallax-vertical-tb-bt {
-  transform: translateY(8.4457%);
   transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 

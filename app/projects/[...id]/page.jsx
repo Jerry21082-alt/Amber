@@ -31,12 +31,14 @@ const page = ({ params }) => {
         <div className="barbar-transition-container">
           <section className="case-study basicScroll">
             <Link href="/" className="btn-page-back">
-              <span className="btn-box"></span>
+              <span className="btn-box">
+                <span className="icon-back"></span>
+              </span>
             </Link>
-            <div className="container" style={{ height: "5509px" }}>
+            <div className="container" >
               <div
                 className="content"
-                style={{ transform: "translate3d(0, -0.0019px, 0)" }}
+                // style={{ transform: "translate3d(0, -0.0019px, 0)" }}
               >
                 <section className="hero">
                   <div
