@@ -6,7 +6,6 @@ import About from "@/components/About";
 import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { globalContext } from "./useStateContext/AppContext";
 import { usePathname } from "next/navigation";
 
 export default function Layout({ children }) {
@@ -15,7 +14,7 @@ export default function Layout({ children }) {
   const [showAbout, setShowAbout] = useState(false);
   const [navTop, setNavTop] = useState(false);
 
-  const { uiMode, setUiMode } = globalContext();
+  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "night-mode");
 
   useEffect(() => {
     setIsMounted(true);
