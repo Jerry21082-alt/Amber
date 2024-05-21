@@ -7,6 +7,7 @@ import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { globalContext } from "./useStateContext/AppContext";
+import { usePathname } from "next/navigation";
 
 export default function Layout({ children }) {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,8 +21,17 @@ export default function Layout({ children }) {
     setIsMounted(true);
   }, []);
 
+  
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      setUiMode("light-mode");
+    } else setUiMode("night-mode");
+  }, [pathname]);
+
   return (
-    <body
+    <section
       className={`home-page ${isMounted ? uiMode : ""} ${
         mobileNavOpen ? "mobileNavOpen" : null
       } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""}`}
@@ -35,6 +45,6 @@ export default function Layout({ children }) {
         uiMode={uiMode}
       />
       <div>{children}</div>
-    </body>
+    </section>
   );
 }

@@ -89,7 +89,7 @@ body:not(.isMobile) {
   color: $offwhite;
 }
 
-body.night-mode {
+.night-mode {
   .curtain {
     background-color: #000 !important;
   }
@@ -112,8 +112,8 @@ body.night-mode {
   }
 }
 
-body.night-mode,
-body.ultra-mode {
+.night-mode,
+.ultra-mode {
   background-color: #000;
   color: $offwhite;
 
@@ -236,7 +236,7 @@ body.ultra-mode {
   }
 }
 
-body.light-mode {
+.light-mode {
   .color-mode .dot {
     background-color: #000;
   }
@@ -285,7 +285,7 @@ body.light-mode {
   }
 }
 
-body.ultra-mode {
+.ultra-mode {
   background-color: $ultra;
 
   .curtain {
@@ -412,7 +412,7 @@ body.ultra-mode {
   }
 }
 
-body.home-page {
+.home-page {
   .slideUp span {
     animation-delay: 2s;
   }
@@ -432,7 +432,7 @@ body.home-page {
   }
 }
 
-body.ultra-mode .mobile-nav {
+.ultra-mode .mobile-nav {
   border-color: #f2f2f2;
 }
 
