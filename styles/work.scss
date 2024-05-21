@@ -33,13 +33,13 @@ $offwhite: #f2f2f2;
       position: absolute;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: 10;
       width: 100vw;
       height: 100%;
       background-color: $offwhite;
       transform: scaleY(1);
       transform-origin: center top;
-      animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s forwards;
+      // animation: scaleUp 0.7s cubic-bezier(0.755, 0.05, 0.855, 0.06) 2s forwards;
     }
 
     .title-container {
@@ -147,15 +147,6 @@ $offwhite: #f2f2f2;
     }
   }
 
-  @keyframes scaleUp {
-    0% {
-      transform: scaleY(1);
-    }
-    100% {
-      transform: scaleY(0);
-    }
-  }
-
   @media screen and (max-width: 767px) {
     .hero {
       height: calc(90vh - 5vw - 71px);
@@ -190,6 +181,7 @@ $offwhite: #f2f2f2;
       }
     }
   }
+  
 
   @media screen and (max-width: 1200px) {
     .intro {
@@ -262,5 +254,14 @@ $offwhite: #f2f2f2;
   .parallax-no-mobile {
     transform: none;
     transition: none;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
   }
 }

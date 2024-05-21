@@ -1213,22 +1213,6 @@ button.link {
   }
 }
 
-
-.icon-back {
-	display: block;
-}
-
-.icon-back, 
-.icon-back:before, 
-.icon-back:after {
-	position: absolute;
-	width: 25px;
-	height: 2px;
-	border-radius: 1px;
-	background-color: #000;
-	transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
-}
-
 .icon-back {
 	position: relative;
 }
@@ -1255,6 +1239,17 @@ button.link {
 	transform: translate3d(-7px, -2px, 0) rotate(45deg) scale(0.6, 1);
 }
 
+
+.icon-back, 
+.icon-back:before, 
+.icon-back:after {
+	position: absolute;
+	width: 25px;
+	height: 2px;
+	border-radius: 1px;
+	background-color: #000;
+	transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
 
 @media screen and (min-width: 768px) {
   .btn-back,
