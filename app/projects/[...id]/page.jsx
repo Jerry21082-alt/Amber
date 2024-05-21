@@ -35,7 +35,7 @@ const page = ({ params }) => {
                 <span className="icon-back"></span>
               </span>
             </Link>
-            <div className="container" style={{ height: "100%" }}>
+            <div className="container" style={{ height: "6000px" }}>
               <div
                 className="content"
                 // style={{ transform: "translate3d(0, -0.0019px, 0)" }}
