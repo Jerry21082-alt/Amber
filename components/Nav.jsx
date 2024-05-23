@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link";
-import { globalContext } from "./useStateContext/AppContext";
 
 const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
   return (
