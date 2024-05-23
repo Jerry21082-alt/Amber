@@ -7,7 +7,6 @@ import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { usePathname } from "next/navigation";
-import { globalContext } from "./useStateContext/AppContext";
 
 export default function Layout({ children }) {
   const [isMounted, setIsMounted] = useState(false);
