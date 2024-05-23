@@ -55,7 +55,7 @@ a {
 
 body:not(.isMobile) {
   .basicScroll {
-    height: 100vh;
+    // height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -72,7 +72,7 @@ body:not(.isMobile) {
 }
 
 .basicScroll .content {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -412,6 +412,8 @@ body:not(.isMobile) {
   }
 }
 
+.basicScroll
+
 .home-page {
   .slideUp span {
     animation-delay: 2s;
@@ -431,6 +433,7 @@ body:not(.isMobile) {
     }
   }
 }
+
 
 .ultra-mode .mobile-nav {
   border-color: #f2f2f2;

@@ -7,12 +7,36 @@ import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import { usePathname } from "next/navigation";
+import { globalContext } from "./useStateContext/AppContext";
 
 export default function Layout({ children }) {
   const [isMounted, setIsMounted] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [navTop, setNavTop] = useState(false);
+  const [isVissible, setIsVissible] = useState(false);
+  const [prevPos, setPrevpos] = useState(0);
+
+  const handleScroll = () => {
+    const currentPos = window.scrollY;
+    const windowHight = window.innerHeight;
+    const doumentHight = document.documentElement.scrollHeight;
+
+    windowHight + currentPos >= doumentHight
+      ? setIsVissible(false)
+      : currentPos > 200
+      ? setIsVissible(true)
+      : setIsVissible(false);
+
+    setPrevpos(currentPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isVissible, prevPos]);
 
   const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "night-mode");
 
@@ -20,7 +44,6 @@ export default function Layout({ children }) {
     setIsMounted(true);
   }, []);
 
-  
   const pathname = usePathname();
 
   useEffect(() => {
@@ -30,10 +53,12 @@ export default function Layout({ children }) {
   }, [pathname]);
 
   return (
-    <section
+    <body
       className={`home-page ${isMounted ? uiMode : ""} ${
         mobileNavOpen ? "mobileNavOpen" : null
-      } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""}`}
+      } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""} ${
+        isVissible ? "isvissible" : ""
+      }`}
     >
       <Curtain />
       <About setShowAbout={setShowAbout} />
@@ -44,6 +69,6 @@ export default function Layout({ children }) {
         uiMode={uiMode}
       />
       <div>{children}</div>
-    </section>
+    </body>
   );
 }

@@ -13,7 +13,7 @@ $ultra: #4801ff;
   font-style: normal;
 }
 
-.home-page {
+body.home-page {
   .copyright {
     color: #fff;
     opacity: 0.5;
@@ -50,7 +50,22 @@ $ultra: #4801ff;
   }
 }
 
-.home-page .ui {
+body.home-page.isvissible {
+  .logo {
+    opacity: 0.1;
+    z-index: -2;
+  }
+
+  .info.nav-info {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.25s ease-in-out,
+      opacity 0.25s ease-in-out visibility 0.25s;
+  }
+}
+
+body.home-page .ui {
   .contact ul,
   .links,
   .social,
@@ -361,6 +376,13 @@ $ultra: #4801ff;
         border-top: 4px solid $ultra;
         transform: rotate(30deg);
       }
+    }
+  }
+
+  body.mobileNavOpen & {
+    .color-mode {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

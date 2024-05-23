@@ -1,4 +1,7 @@
+'use client'
+
 import Link from "next/link";
+import { globalContext } from "./useStateContext/AppContext";
 
 const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
   return (
@@ -24,7 +27,7 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
         </span>
       </button>
 
-      <div className="info">
+      <div className="info nav-info">
         <div className="left">
           <div className="contact">
             <ul>

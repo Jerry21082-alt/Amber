@@ -3,6 +3,7 @@
 import { projects } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const page = ({ params }) => {
   const { id } = params;
@@ -35,7 +36,7 @@ const page = ({ params }) => {
                 <span className="icon-back"></span>
               </span>
             </Link>
-            <div className="container" style={{ height: "6000px" }}>
+            <div className="container" >
               <div
                 className="content"
                 // style={{ transform: "translate3d(0, -0.0019px, 0)" }}
