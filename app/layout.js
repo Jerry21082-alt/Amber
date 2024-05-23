@@ -8,7 +8,6 @@ import "../styles/flickity.scss";
 import "../styles/mixing.scss";
 
 import Layout from "@/components/Layout";
-import AppContext from "@/components/useStateContext/AppContext";
 
 export const metadata = {
   title: "Amber Dev.",
@@ -19,11 +18,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <AppContext>
-        <Layout>
-          <div>{children}</div>
-        </Layout>
-      </AppContext>
+      <Layout>
+        <div>{children}</div>
+      </Layout>
     </html>
   );
 };
