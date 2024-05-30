@@ -56,7 +56,7 @@ export default function Layout({ children }) {
       className={`home-page ${isMounted ? uiMode : ""} ${
         mobileNavOpen ? "mobileNavOpen" : null
       } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""} ${
-        isVissible ? "isvissible" : ""
+        isVissible || showAbout ? "isvissible" : ""
       }`}
     >
       <Curtain />

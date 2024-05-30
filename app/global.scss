@@ -61,6 +61,23 @@ body:not(.isMobile) {
   }
 }
 
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
 .btn-box {
   pointer-events: none;
   display: flex;
@@ -411,8 +428,6 @@ body:not(.isMobile) {
     }
   }
 }
-
-.basicScroll
 
 .home-page {
   .slideUp span {

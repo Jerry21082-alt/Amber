@@ -117,7 +117,8 @@ const page = ({ params }) => {
                         className="flickity-slider"
                         style={{ left: "0px", transform: "translateX(-0.02%)" }}
                       >
-                        <img
+                        <Image
+                          fill
                           src="/carousel_01-slide_01.jpg"
                           alt="Home"
                           aria-selected="true"
