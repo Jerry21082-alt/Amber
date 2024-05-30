@@ -10,6 +10,10 @@ const page = ({ params }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const projectDetails = getProductDetails();
+
+  const slides = projectDetails.pagePhotos;
+
   const showSlide = (index) => {
     const totalSlides = slides.length;
     if (index >= totalSlides) {
@@ -22,13 +26,11 @@ const page = ({ params }) => {
   };
 
   const nextSlide = () => {
-    // showSlide(currentIndex + 1);
-    setCurrentIndex((prevIndex) => prevIndex + 1);
+    showSlide(currentIndex + 1);
   };
 
   const prevSlide = () => {
-    // showSlide(currentIndex - 1);
-    setCurrentIndex((prevIndex) => prevIndex - 1);
+    showSlide(currentIndex - 1);
   };
 
   function getProductDetails() {
@@ -42,8 +44,6 @@ const page = ({ params }) => {
 
     return projectDetails;
   }
-
-  const projectDetails = getProductDetails();
 
   const projectLink = projectDetails.title1
     .concat(projectDetails.title2)
@@ -136,48 +136,34 @@ const page = ({ params }) => {
                       className="flickity-viewport"
                       style={{ touchAction: "pan-y" }}
                     >
-                      <div
-                        className="flickity-slider"
-                        style={{
-                          left: "0px",
-                          transform: `translateX${-currentIndex * 100}%`,
-                        }}
-                      >
-                        <img
-                          src="/Screenshot (7).png"
-                          alt="Home"
-                          aria-selected="true"
-                          className="is-selected"
+                      {slides.map((photo, idx) => (
+                        <div
+                          key={idx}
+                          className="flickity-slider"
                           style={{
-                            position: "absolute",
-                            left: `${currentIndex * 100}%`,
+                            left: "0px",
+                            transform: `translateX(${-currentIndex * 100}%)`,
+                            transition: "transform .5s ease-in-out",
                           }}
-                        />
-                        {/* <img
-                          src="/carousel_01-slide_02.jpg"
-                          alt="Home"
-                          aria-selected="true"
-                          className="is-selected"
-                          style={{
-                            position: "absolute",
-                            left: `${currentIndex * 100}%`,
-                          }}
-                        /> */}
-                        {/* <img
-                          src="/carousel_01-slide_03.jpg"
-                          alt="Home"
-                          aria-selected="true"
-                          className="is-selected"
-                          style={{
-                            position: "absolute",
-                            left: `${currentIndex * 100}%`,
-                          }}
-                        /> */}
-                      </div>
+                        >
+                          <img
+                            src={`${photo}`}
+                            alt="Home"
+                            aria-selected="true"
+                            className="is-selected"
+                            style={{
+                              position: "absolute",
+                              left: `${idx * 100}%`,
+                            }}
+                          />
+                        </div>
+                      ))}
                     </div>
                     <button
                       type="button"
                       aria-label="prvious"
+                      onClick={prevSlide}
+                      style={{ display: "none" }}
                       className="flickity-button flickity-prev-next-button previous"
                     >
                       <svg
@@ -195,6 +181,8 @@ const page = ({ params }) => {
                     <button
                       type="button"
                       aria-label="next"
+                      onClick={nextSlide}
+                      style={{ display: "none" }}
                       className="flickity-button flickity-prev-next-button previous"
                     >
                       <svg
@@ -211,14 +199,18 @@ const page = ({ params }) => {
                     </button>
 
                     <ol className="flickity-page-dots">
-                      <li
-                        className="dot is-selected"
-                        aria-label="page dot 1"
-                        aria-current="step"
-                      ></li>
-                      <li className="dot" aria-label="page dot 2"></li>
-                      <li className="dot" aria-label="page dot 3"></li>
-                      <li className="dot" aria-label="page dot 4"></li>
+                      {slides.map((slide, idx) => (
+                        <li
+                          key={idx}
+                          className={`dot ${
+                            slides.indexOf(slide) === currentIndex
+                              ? "is-selected"
+                              : ""
+                          }`}
+                          aria-label="page dot 1"
+                          aria-current="step"
+                        ></li>
+                      ))}
                     </ol>
                   </div>
 
@@ -230,14 +222,13 @@ const page = ({ params }) => {
                         onClick={prevSlide}
                       >
                         <svg
-                          version="1.1"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
+                          viewBox="0 0 24 24"
+                          id="left-arrow"
+                          width="20px"
+                          height="20px"
                         >
-                          <title>arrow-long-left</title>
-                          <path d="M0.75 10l5.25-5.5v3.5h13v4h-13v3.5l-5.25-5.5z"></path>
+                          <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
                         </svg>
                       </button>
                       <span className="current">1</span>
@@ -250,14 +241,13 @@ const page = ({ params }) => {
                         onClick={nextSlide}
                       >
                         <svg
-                          version="1.1"
                           xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
+                          viewBox="0 0 24 24"
+                          id="right-arrow"
+                          width="20px"
+                          height="20px"
                         >
-                          <title>arrow-long-right</title>
-                          <path d="M14 15.5v-3.5h-13v-4h13v-3.5l5.25 5.5-5.25 5.5z"></path>
+                          <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>
                         </svg>
                       </button>
                     </div>

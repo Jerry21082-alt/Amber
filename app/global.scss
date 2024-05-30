@@ -113,7 +113,7 @@ body:not(.isMobile) {
 }
 
 .ultra-mode {
-  background-color: #000;
+  background-color: $ultra;
   color: #000;
 
   .ui {
@@ -210,13 +210,11 @@ body:not(.isMobile) {
 
   &.home-page:not(.ultra-mode) {
     .projects a {
-      @supports (
-        (-webkit-text-stroke: 2px $offwhite) or (text-stroke: 2px $offwhite)
-      ) {
+      @supports ((-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000)) {
         color: transparent;
 
-        -webkit-text-stroke: 2px #000;
-        text-stroke: 2px #000;
+        -webkit-text-stroke: 1px #000;
+        text-stroke: 1px #000;
       }
     }
 
@@ -239,8 +237,8 @@ body:not(.isMobile) {
         color: transparent;
         transition: color 0.5s 0.5s, opacity 1s;
 
-        -webkit-text-stroke: 2px #000;
-        text-stroke: 2px #000;
+        -webkit-text-stroke: 1px #000;
+        text-stroke: 1px #000;
       }
     }
 
@@ -269,6 +267,36 @@ body:not(.isMobile) {
 
   .ui {
     color: $offwhite;
+  }
+
+  .ui .logo {
+    color: #fff;
+
+    @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #000)) {
+      -webkit-text-stroke: 1px #fff;
+      text-stroke: 1px #fff;
+    }
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
+          color: $ultra;
+        }
+      }
+    }
+
+    @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
+      -webkit-text-stroke: 1px #fff;
+      text-stroke: 1px #fff;
+    }
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
+          color: transparent;
+        }
+      }
+    }
   }
 
   .ui .copyright {
@@ -475,8 +503,8 @@ body:not(.isMobile) {
       @supports ((-webkit-text-stroke: 2px #000) or (text-stroke: 2px #000)) {
         color: #000;
 
-        -webkit-text-stroke: 2px #000;
-        text-stroke: 2px #000;
+        -webkit-text-stroke: 1px #000;
+        text-stroke: 1px #000;
       }
     }
 
@@ -496,7 +524,7 @@ body:not(.isMobile) {
     &.projectsLi.isSelected .project-container a,
     &.projectsLi.isSelected:hover .project-container a {
       @supports (
-        (-webkit-text-stroke: 3px #151515) or (text-stroke: 3px #151515)
+        (-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515)
       ) {
         color: transparent;
 
@@ -507,11 +535,11 @@ body:not(.isMobile) {
 
     @media screen and (min-width: 768px) and (max-width: 1320px) {
       .projects a {
-        @supports ((-webkit-text-stroke: 2px #000) or (text-stroke: 2px #000)) {
+        @supports ((-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000)) {
           color: #000;
 
-          -webkit-text-stroke: 2px #000;
-          text-stroke: 2px #000;
+          -webkit-text-stroke: 1px #000;
+          text-stroke: 1px #000;
         }
       }
 
@@ -523,12 +551,12 @@ body:not(.isMobile) {
       &.projects .projectLi .projectContainer a,
       &.projectLi.isSelected:hover .projectContainer a {
         @supports (
-          (-webkit-text-stroke: 2px #151515) or (text-stroke: 2px #151515)
+          (-webkit-text-stroke: 1px #151515) or (text-stroke: 1px #151515)
         ) {
           color: transparent;
 
-          -webkit-text-stroke: 2px #151515;
-          text-stroke: 2px #151515;
+          -webkit-text-stroke: 1px #151515;
+          text-stroke: 1px #151515;
         }
       }
     }
