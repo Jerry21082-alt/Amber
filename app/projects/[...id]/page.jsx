@@ -8,6 +8,29 @@ import { useEffect, useState } from "react";
 const page = ({ params }) => {
   const { id } = params;
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const showSlide = (index) => {
+    const totalSlides = slides.length;
+    if (index >= totalSlides) {
+      setCurrentIndex(0);
+    } else if (index < 0) {
+      setCurrentIndex(totalSlides - 1);
+    } else {
+      setCurrentIndex(index);
+    }
+  };
+
+  const nextSlide = () => {
+    // showSlide(currentIndex + 1);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  };
+
+  const prevSlide = () => {
+    // showSlide(currentIndex - 1);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
+  };
+
   function getProductDetails() {
     const [projectDetails] = projects.filter((project) => {
       const projectFullName = project.title1
@@ -115,15 +138,41 @@ const page = ({ params }) => {
                     >
                       <div
                         className="flickity-slider"
-                        style={{ left: "0px", transform: "translateX(-0.02%)" }}
+                        style={{
+                          left: "0px",
+                          transform: `translateX${-currentIndex * 100}%`,
+                        }}
                       >
                         <img
-                          src="/carousel_01-slide_01.jpg"
+                          src="/Screenshot (7).png"
                           alt="Home"
                           aria-selected="true"
                           className="is-selected"
-                          style={{ position: "absolute", left: "0%" }}
+                          style={{
+                            position: "absolute",
+                            left: `${currentIndex * 100}%`,
+                          }}
                         />
+                        {/* <img
+                          src="/carousel_01-slide_02.jpg"
+                          alt="Home"
+                          aria-selected="true"
+                          className="is-selected"
+                          style={{
+                            position: "absolute",
+                            left: `${currentIndex * 100}%`,
+                          }}
+                        /> */}
+                        {/* <img
+                          src="/carousel_01-slide_03.jpg"
+                          alt="Home"
+                          aria-selected="true"
+                          className="is-selected"
+                          style={{
+                            position: "absolute",
+                            left: `${currentIndex * 100}%`,
+                          }}
+                        /> */}
                       </div>
                     </div>
                     <button
@@ -178,6 +227,7 @@ const page = ({ params }) => {
                       <button
                         className="btn-gallery-left"
                         aria-label="previous"
+                        onClick={prevSlide}
                       >
                         <svg
                           version="1.1"
@@ -194,7 +244,11 @@ const page = ({ params }) => {
                       {"/"}
                       <span className="total">4</span>
 
-                      <button className="btn-gallery-right" aria-label="next">
+                      <button
+                        className="btn-gallery-right"
+                        aria-label="next"
+                        onClick={nextSlide}
+                      >
                         <svg
                           version="1.1"
                           xmlns="http://www.w3.org/2000/svg"

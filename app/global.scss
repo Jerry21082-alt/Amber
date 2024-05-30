@@ -1,5 +1,5 @@
 $offwhite: #f2f2f2;
-$ultra: #4801ff;
+$ultra: #ffbf00;
 
 @font-face {
   font-family: finalFantacy;
@@ -110,13 +110,35 @@ body:not(.isMobile) {
   .curtain {
     background-color: #000 !important;
   }
+}
 
-  .logo {
-    color: #fff;
+.ultra-mode {
+  background-color: #000;
+  color: #000;
+
+  .ui {
+    color: #151515;
+  }
+
+  .ui .logo {
+    color: #000;
+
+    @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #000)) {
+      -webkit-text-stroke: 1px #000;
+      text-stroke: 1px #000;
+    }
+
+    @media screen and (min-width: 768px) {
+      &:hover {
+        @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
+          color: $ultra;
+        }
+      }
+    }
 
     @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #fff)) {
-      -webkit-text-stroke: 1px #fff;
-      text-stroke: 1px #fff;
+      -webkit-text-stroke: 1px #000;
+      text-stroke: 1px #000;
     }
 
     @media screen and (min-width: 768px) {
@@ -127,10 +149,121 @@ body:not(.isMobile) {
       }
     }
   }
+
+  .ui .copyright {
+    color: #151515;
+    font-family: smallText;
+  }
+
+  .mobile-nav {
+    border-color: #151515;
+  }
+
+  .mobile-nav-inner,
+  .mobile-nav-inner:before,
+  .mobile-nav-inner:after {
+    background-color: #151515;
+  }
+
+  .ui a:not(.logo),
+  .ui button.link {
+    color: #151515;
+  }
+
+  .ui .links .about-li:after,
+  .ui .links .journal-li:after {
+    background-color: #151515;
+  }
+
+  .icon-back,
+  .icon-back:before,
+  .icon-back:after,
+  .icon-close:before,
+  .icon-close:after {
+    background-color: #151515;
+  }
+
+  &.aboutShow .stagePerspective,
+  &.aboutShow .content {
+    opacity: 0.1;
+  }
+
+  .about:before {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+
+  .about {
+    .left {
+      color: #151515;
+    }
+
+    .right {
+      color: #151515;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .ui .info {
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+  }
+
+  &.home-page:not(.ultra-mode) {
+    .projects a {
+      @supports (
+        (-webkit-text-stroke: 2px $offwhite) or (text-stroke: 2px $offwhite)
+      ) {
+        color: transparent;
+
+        -webkit-text-stroke: 2px #000;
+        text-stroke: 2px #000;
+      }
+    }
+
+    &:not(.intro):not(.outro) .projects.isHovering li:hover a,
+    &:not(.outro) .projects li.isSelected a,
+    &:not(.outro) .projects li:hover a {
+      @supports (
+        (-webkit-text-stroke: 0px $offwhite) or (text-stroke: 0px #000)
+      ) {
+        color: #000;
+      }
+    }
+
+    &.outro .projects.isHovering li:hover a,
+    &.projects li.isSelected a,
+    &.outro .projects li.isSelected:hover a {
+      @supports (
+        (-webkit-text-stroke: 2px $offwhite) or (text-stroke: 2px #000)
+      ) {
+        color: transparent;
+        transition: color 0.5s 0.5s, opacity 1s;
+
+        -webkit-text-stroke: 2px #000;
+        text-stroke: 2px #000;
+      }
+    }
+
+    .projects a:before {
+      color: #000 !important;
+    }
+
+    .projects a:after {
+      background-color: #000;
+    }
+
+    @media screen and (max-width: 767px) {
+      .projects a {
+        @supports ((-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000)) {
+          -webkit-text-stroke: 1px #000;
+          text-stroke: 1px #000;
+        }
+      }
+    }
+  }
 }
 
-.night-mode,
-.ultra-mode {
+.night-mode {
   background-color: #000;
   color: $offwhite;
 
@@ -448,7 +581,6 @@ body:not(.isMobile) {
     }
   }
 }
-
 
 .ultra-mode .mobile-nav {
   border-color: #f2f2f2;
@@ -1145,50 +1277,48 @@ button.link {
   outline: none;
 }
 
-.btn-back:hover, 
+.btn-back:hover,
 .btn-page-back:hover {
+  &:before {
+    border-color: #000;
+    transform: scale(1);
+  }
 
-	&:before {
-		border-color: #000;
-		transform: scale(1);
-	}
-
-	.btn-box {
-		transform: translateX(0) scale(1);
-		opacity: 1;
-		animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045) 0.25s infinite forwards;
-	}
-
+  .btn-box {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045)
+      0.25s infinite forwards;
+  }
 }
 
 @keyframes slideLeftOutRightIn {
-	0% {
-		transform: translateX(0) scale(1);
-		opacity: 1;
-	}
-	5% {
-		transform: translateX(0) scale(0.75);
-		opacity: 1;
-	}
-	19.99% {
-		transform: translateX(-50%) scale(0.75);
-		opacity: 0;
-	}
-	20% {
-		transform: translateX(50%) scale(0.75);
-		opacity: 0;
-		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-	}
-	30% {
-		transform: translateX(0) scale(0.75);
-		opacity: 1;
-	}
-	40% {
-		transform: translateX(0) scale(1);
-		opacity: 1;
-	}
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  5% {
+    transform: translateX(0) scale(0.75);
+    opacity: 1;
+  }
+  19.99% {
+    transform: translateX(-50%) scale(0.75);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(50%) scale(0.75);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  30% {
+    transform: translateX(0) scale(0.75);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
 }
-
 
 .btn-back,
 .btn-page-back {
@@ -1232,41 +1362,40 @@ button.link {
 }
 
 .icon-back {
-	position: relative;
+  position: relative;
 }
 
 .icon-back:before,
 .icon-back:after {
-	content: '';
-	display: block;
+  content: "";
+  display: block;
 }
 
 .icon-back:before {
-	top: -7px;
+  top: -7px;
 }
 
 .icon-back:after {
-	bottom: -7px;
+  bottom: -7px;
 }
 
 .icon-back:before {
-	transform: translate3d(-7px, 2px, 0) rotate(-45deg) scale(0.6, 1);
+  transform: translate3d(-7px, 2px, 0) rotate(-45deg) scale(0.6, 1);
 }
 
 .icon-back:after {
-	transform: translate3d(-7px, -2px, 0) rotate(45deg) scale(0.6, 1);
+  transform: translate3d(-7px, -2px, 0) rotate(45deg) scale(0.6, 1);
 }
 
-
-.icon-back, 
-.icon-back:before, 
+.icon-back,
+.icon-back:before,
 .icon-back:after {
-	position: absolute;
-	width: 25px;
-	height: 2px;
-	border-radius: 1px;
-	background-color: #000;
-	transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #000;
+  transition: background-color 0.15s ease-in-out, transform 0.15s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
