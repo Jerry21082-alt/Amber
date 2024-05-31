@@ -9,7 +9,7 @@ $ultra: #ffbf00;
 
 @font-face {
   font-family: smallText;
-  src: url("../public/Gravity-Regular.otf");
+  src: url("../public/Cerebri\ Sans\ Book.ttf");
   font-style: normal;
 }
 
@@ -25,7 +25,7 @@ $ultra: #ffbf00;
 
 html {
   box-sizing: border-box;
-  font-family: finalFantacy;
+  // font-family: finalFantacy;
 }
 
 *,
@@ -1317,6 +1317,36 @@ button.link {
     opacity: 1;
     animation: slideLeftOutRightIn 2s cubic-bezier(0.6, -0.28, 0.735, 0.045)
       0.25s infinite forwards;
+  }
+}
+
+.content-slide {
+  animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.content-rotate {
+  animation: rotate 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes rotate {
+  from {
+    opacity: 0;
+    transform: rotateY(35deg) translateZ(0);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0) translateZ(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 

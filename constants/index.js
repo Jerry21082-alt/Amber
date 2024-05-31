@@ -6,9 +6,9 @@ export const projects = [
     title2: "Nest",
     href: "/",
     pagePhotos: [
-      "/carousel_01-slide_01.jpg",
-      "/carousel_01-slide_02.jpg",
-      "/carousel_01-slide_3.jpg",
+      "/Screenshot (7).png",
+      "/Screenshot (8).png",
+      "/Screenshot (9).png",
     ],
     productionYear: 2023,
   },

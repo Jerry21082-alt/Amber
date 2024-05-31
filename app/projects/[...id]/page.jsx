@@ -1,5 +1,6 @@
 "use client";
 
+import AnimateOnReveal from "@/components/AnimateOnReveal";
 import { projects } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +10,7 @@ const page = ({ params }) => {
   const { id } = params;
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndexSec, setCurrentIndexSec] = useState(0);
 
   const projectDetails = getProductDetails();
 
@@ -31,6 +33,25 @@ const page = ({ params }) => {
 
   const prevSlide = () => {
     showSlide(currentIndex - 1);
+  };
+
+  const showSlideSec = (index) => {
+    const totalSlides = slides.length;
+    if (index >= totalSlides) {
+      setCurrentIndexSec(0);
+    } else if (index < 0) {
+      setCurrentIndexSec(totalSlides - 1);
+    } else {
+      setCurrentIndexSec(index);
+    }
+  };
+
+  const nextSlideSec = () => {
+    showSlideSec(currentIndexSec + 1);
+  };
+
+  const prevSlideSec = () => {
+    showSlideSec(currentIndexSec - 1);
   };
 
   function getProductDetails() {
@@ -80,49 +101,57 @@ const page = ({ params }) => {
                 </section>
                 <section className="intro reveal reveal-show">
                   <div className="credits">
-                    <h5>
-                      <a
-                        href="www.metaforce.com"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        {`www.${projectLink}.com`}
-                      </a>
-                    </h5>
-                    <h6>
-                      {projectDetails.title1} {""} {projectDetails.title2}
-                    </h6>
-                    <span className="title">Agency:</span>
-                    <span>Amber Dev</span>
-                    <span className="title">Lead Front-end Developer:</span>
-                    <span>Effiong Jerry</span>
-                    <span className="title">Lead Back-end Developer:</span>
-                    <span>Effiong Jerry</span>
+                    <AnimateOnReveal animation="content-slide" delay=".4s">
+                      <h5>
+                        <a
+                          href="www.metaforce.com"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          {`www.${projectLink}.com`}
+                        </a>
+                      </h5>
+                      <h6>
+                        {projectDetails.title1} {""} {projectDetails.title2}
+                      </h6>
+                      <span className="title">Agency:</span>
+                      <span>Amber Dev</span>
+                      <span className="title">Lead Front-end Developer:</span>
+                      <span>Effiong Jerry</span>
+                      <span className="title">Lead Back-end Developer:</span>
+                      <span>Effiong Jerry</span>
+                    </AnimateOnReveal>
                   </div>
 
                   <div className="summary reveal">
                     <div className="col-1">
-                      <p>
-                        {projectDetails.title1} {""} {projectDetails.title2} is
-                        a brand design agency based in Portland, Oregon
-                      </p>
-                      <p>
-                        With simplicity, flexibility and maintainablity in mind
-                        we build a website uniquely Mega
-                      </p>
+                      <AnimateOnReveal animation="content-slide">
+                        <p>
+                          <strong>
+                            {projectDetails.title1} {""} {projectDetails.title2}{" "}
+                            is a brand design agency based in Portland, Oregon
+                          </strong>
+                        </p>
+                        <p>
+                          With simplicity, flexibility and maintainablity in
+                          mind we build a website uniquely Mega
+                        </p>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <p>
-                        {" "}
-                        design agency based in Portland, Oregon. With
-                        simplicity, flexibility, and maintainability in mind we
-                        built a website uniquely mega. Powered by a Craft CMS
-                        back-end the website is easy to manage and update. There
-                        are several customizable content blocks that can be
-                        added and rearranged to make case studies be presented
-                        in a meaningful way.
-                      </p>
+                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                        <p>
+                          {" "}
+                          design agency based in Portland, Oregon. With
+                          simplicity, flexibility, and maintainability in mind
+                          we built a website uniquely mega. Powered by a Craft
+                          CMS back-end the website is easy to manage and update.
+                          There are several customizable content blocks that can
+                          be added and rearranged to make case studies be
+                          presented in a meaningful way.
+                        </p>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
@@ -215,73 +244,84 @@ const page = ({ params }) => {
                   </div>
 
                   <div className="info">
-                    <div className="pagination">
-                      <button
-                        className="btn-gallery-left"
-                        aria-label="previous"
-                        onClick={prevSlide}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          id="left-arrow"
-                          width="20px"
-                          height="20px"
+                    <AnimateOnReveal animation="content-rotate">
+                      <div className="pagination">
+                        <button
+                          className="btn-gallery-left"
+                          aria-label="previous"
+                          onClick={prevSlide}
+                          style={{ width: "35px", height: "20px" }}
                         >
-                          <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
-                        </svg>
-                      </button>
-                      <span className="current">1</span>
-                      {"/"}
-                      <span className="total">4</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            id="left-arrow"
+                            // width="20px"
+                            // height="20px"
+                            style={{ width: "100%", height: "100%" }}
+                          >
+                            <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
+                          </svg>
+                        </button>
+                        <span className="current">{currentIndex + 1}</span>
+                        {"/"}
+                        <span className="total">{slides.length}</span>
 
-                      <button
-                        className="btn-gallery-right"
-                        aria-label="next"
-                        onClick={nextSlide}
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          id="right-arrow"
-                          width="20px"
-                          height="20px"
+                        <button
+                          className="btn-gallery-right"
+                          aria-label="next"
+                          onClick={nextSlide}
+                          style={{ width: "20px", height: "20px" }}
                         >
-                          <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>
-                        </svg>
-                      </button>
-                    </div>
-                    <h6 className="title">
-                      Start with an idea <br /> and make it better
-                    </h6>
-                    <div className="description">
-                      <p>
-                        - Home
-                        <br />
-                        - Work
-                        <br />
-                        - Studio
-                        <br />
-                      </p>
-                    </div>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            id="right-arrow"
+                            // width="20px"
+                            // height="20px"
+                            style={{ width: "100%", height: "100%" }}
+                          >
+                            <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <h6 className="title">
+                        Start with an idea <br /> and make it better
+                      </h6>
+                      <div className="description">
+                        <p>
+                          - Home
+                          <br />
+                          - Work
+                          <br />
+                          - Studio
+                          <br />
+                        </p>
+                      </div>
+                    </AnimateOnReveal>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <p>
-                        The home page features a randomly selected video, masked
-                        in a circle, with animated text describing Studio Mega's
-                        high-level process.
-                      </p>
+                      <AnimateOnReveal animation="content-slide">
+                        <p>
+                          The home page features a randomly selected video,
+                          masked in a circle, with animated text describing
+                          Studio Mega's high-level process.
+                        </p>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <p>
-                        We developed multiple content column layouts, carousels
-                        and media assets that provides an ease to the flow pages
-                      </p>
+                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                        <p>
+                          We developed multiple content column layouts,
+                          carousels and media assets that provides an ease to
+                          the flow pages
+                        </p>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
@@ -292,24 +332,27 @@ const page = ({ params }) => {
                   data-to="10%"
                   data-timing="quadOut"
                 >
-                  <blockquote>
-                    <span className="quote-left">"</span>
-                    <p>
-                      Finding someone that can not only bring expertise and
-                      technical ability but also creativity to enhance the
-                      experience is hard to find. But Eric does just that.
-                    </p>
-                    <p>
-                      When we work with him, we’re not just handing off a
-                      direction and waiting for him to implement it. We
-                      collaborate throughout the process and the end result is
-                      always better than what we initially thought was possible.
-                    </p>
-                    <p>
-                      On top of that, he’s an awesome dude, good communicator
-                      and fun to be around.
-                    </p>
-                  </blockquote>
+                  <AnimateOnReveal animation="content-rotate">
+                    <blockquote>
+                      <span className="quote-left">"</span>
+                      <p>
+                        Finding someone that can not only bring expertise and
+                        technical ability but also creativity to enhance the
+                        experience is hard to find. But Eric does just that.
+                      </p>
+                      <p>
+                        When we work with him, we’re not just handing off a
+                        direction and waiting for him to implement it. We
+                        collaborate throughout the process and the end result is
+                        always better than what we initially thought was
+                        possible.
+                      </p>
+                      <p>
+                        On top of that, he’s an awesome dude, good communicator
+                        and fun to be around.
+                      </p>
+                    </blockquote>
+                  </AnimateOnReveal>
                 </section>
 
                 <section className="module-gallery reveal reveal-show">
@@ -321,31 +364,34 @@ const page = ({ params }) => {
                       className="flickity-viewport"
                       style={{ touchAction: "pan-y" }}
                     >
-                      <div
-                        className="flickity-slider"
-                        style={{ left: "0px", transform: "translateX(-0.02%)" }}
-                      >
-                        <Image
-                          fill
-                          src="/carousel_01-slide_01.jpg"
-                          alt="Home"
-                          aria-selected="true"
-                          className="is-selected"
-                          style={{ position: "absolute", left: "0%" }}
-                        />
-                        <Image
-                          fill
-                          src="/carousel_01-slide_01.jpg"
-                          alt="Home"
-                          aria-selected="true"
-                          className="is-selected"
-                          style={{ position: "absolute", left: "100.05%" }}
-                        />
-                      </div>
+                      {slides.map((photo, idx) => (
+                        <div
+                          key={idx}
+                          className="flickity-slider"
+                          style={{
+                            left: "0px",
+                            transform: `translateX(${-currentIndexSec * 100}%)`,
+                            transition: "transform .5s ease-in-out",
+                          }}
+                        >
+                          <img
+                            src={`${photo}`}
+                            alt="Home"
+                            aria-selected="true"
+                            className="is-selected"
+                            style={{
+                              position: "absolute",
+                              left: `${idx * 100}%`,
+                            }}
+                          />
+                        </div>
+                      ))}
                     </div>
                     <button
                       type="button"
                       aria-label="prvious"
+                      onClick={prevSlide}
+                      style={{ display: "none" }}
                       className="flickity-button flickity-prev-next-button previous"
                     >
                       <svg
@@ -363,6 +409,8 @@ const page = ({ params }) => {
                     <button
                       type="button"
                       aria-label="next"
+                      onClick={nextSlide}
+                      style={{ display: "none" }}
                       className="flickity-button flickity-prev-next-button previous"
                     >
                       <svg
@@ -379,77 +427,100 @@ const page = ({ params }) => {
                     </button>
 
                     <ol className="flickity-page-dots">
-                      <li
-                        className="dot is-selected"
-                        aria-label="page dot 1"
-                        aria-current="step"
-                      ></li>
-                      <li className="dot" aria-label="page dot 2"></li>
-                      <li className="dot" aria-label="page dot 3"></li>
-                      <li className="dot" aria-label="page dot 4"></li>
+                      {slides.map((slide, idx) => (
+                        <li
+                          key={idx}
+                          className={`dot ${
+                            slides.indexOf(slide) === currentIndex
+                              ? "is-selected"
+                              : ""
+                          }`}
+                          aria-label="page dot 1"
+                          aria-current="step"
+                        ></li>
+                      ))}
                     </ol>
                   </div>
 
                   <div className="info">
-                    <div className="pagination">
-                      <button
-                        className="btn-gallery-left"
-                        aria-label="previous"
-                      >
-                        <svg
-                          version="1.1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
+                    <AnimateOnReveal animation="content-rotate">
+                      <div className="pagination">
+                        <button
+                          className="btn-gallery-left"
+                          aria-label="previous"
+                          onClick={prevSlideSec}
+                          style={{ width: "35px", height: "20px" }}
                         >
-                          <title>arrow-long-left</title>
-                          <path d="M0.75 10l5.25-5.5v3.5h13v4h-13v3.5l-5.25-5.5z"></path>
-                        </svg>
-                      </button>
-                      <span className="current">1</span>
-                      {"/"}
-                      <span className="total">4</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            id="left-arrow"
+                            // width="20px"
+                            // height="20px"
+                            style={{ width: "100%", height: "100%" }}
+                          >
+                            <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
+                          </svg>
+                        </button>
+                        <span className="current">{currentIndex + 1}</span>
+                        {"/"}
+                        <span className="total">{slides.length}</span>
 
-                      <button className="btn-gallery-right" aria-label="next">
-                        <svg
-                          version="1.1"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 20 20"
+                        <button
+                          className="btn-gallery-right"
+                          aria-label="next"
+                          onClick={nextSlideSec}
+                          style={{ width: "20px", height: "20px" }}
                         >
-                          <title>arrow-long-right</title>
-                          <path d="M14 15.5v-3.5h-13v-4h13v-3.5l5.25 5.5-5.25 5.5z"></path>
-                        </svg>
-                      </button>
-                    </div>
-                    <h6 className="title">Case Studies</h6>
-                    <div className="description">
-                      <p>
-                        A primary focus of the website is to showcase the brand
-                        design work that studio Mega has delivered to their
-                        clients
-                      </p>
-                    </div>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            id="right-arrow"
+                            // width="20px"
+                            // height="20px"
+                            style={{ width: "100%", height: "100%" }}
+                          >
+                            <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <h6 className="title">
+                        Start with an idea <br /> and make it better
+                      </h6>
+                      <div className="description">
+                        <p>
+                          - Home
+                          <br />
+                          - Work
+                          <br />
+                          - Studio
+                          <br />
+                        </p>
+                      </div>
+                    </AnimateOnReveal>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <p>
-                        The home page features a randomly selected video, masked
-                        in a circle, with animated text describing Studio Mega's
-                        high-level process.
-                      </p>
+                      <AnimateOnReveal animation="content-slide">
+                        <p>
+                          The home page features a randomly selected video,
+                          masked in a circle, with animated text describing
+                          Studio Mega's high-level process.
+                        </p>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <p>
-                        We developed multiple content column layouts, carousels
-                        and media assets that provides an ease to the flow pages
-                      </p>
+                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                        <p>
+                          We developed multiple content column layouts,
+                          carousels and media assets that provides an ease to
+                          the flow pages
+                        </p>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
@@ -464,15 +535,17 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <h6 className="title">
-                      Studio Mega own branding set them apart from
-                      other&nbsp;agencies
-                    </h6>
-                    <p>
-                      vibrant colors, unique blending modes, and hover overkays
-                      can be seen here and in hoverable content throughout the
-                      website
-                    </p>
+                    <AnimateOnReveal animation="content-rotate">
+                      <h6 className="title">
+                        Studio Mega own branding set them apart from
+                        other&nbsp;agencies
+                      </h6>
+                      <p>
+                        vibrant colors, unique blending modes, and hover
+                        overkays can be seen here and in hoverable content
+                        throughout the website
+                      </p>
+                    </AnimateOnReveal>
                   </div>
                 </section>
 
@@ -484,19 +557,21 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <h6 className="title">
-                      A fully featured mobile experience .
-                    </h6>
+                    <AnimateOnReveal animation="content-rotate" delay=".2s">
+                      <h6 className="title">
+                        A fully featured mobile experience .
+                      </h6>
 
-                    <p>
-                      Inline auto playing video and animation can been seen on
-                      the home, work , and case study pages
-                    </p>
+                      <p>
+                        Inline auto playing video and animation can been seen on
+                        the home, work , and case study pages
+                      </p>
 
-                    <p>
-                      The animated mobile navigation content keep the mobile
-                      experience feeling last fluid
-                    </p>
+                      <p>
+                        The animated mobile navigation content keep the mobile
+                        experience feeling last fluid
+                      </p>
+                    </AnimateOnReveal>
                   </div>
                 </section>
 
@@ -508,50 +583,57 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <h6 className="title">Touch interactions</h6>
+                    <AnimateOnReveal animation="content-rotate">
+                      <h6 className="title">Touch interactions</h6>
 
-                    <p>
-                      Inline auto playing video and animation can been seen on
-                      the home, work , and case study pages
-                    </p>
+                      <p>
+                        Inline auto playing video and animation can been seen on
+                        the home, work , and case study pages
+                      </p>
 
-                    <p>
-                      The animated mobile navigation content keep the mobile
-                      experience feeling last fluid
-                    </p>
+                      <p>
+                        The animated mobile navigation content keep the mobile
+                        experience feeling last fluid
+                      </p>
+                    </AnimateOnReveal>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <p>
-                        <strong>
-                          Studio Mega has some of the top creative talent in
-                          portland area
-                        </strong>
-                      </p>
-                      <p>
-                        We're thrilled at each opportunity we have to partner
-                        with such an easy going, welcoming group of mega
-                        creatives.
-                      </p>
+                      <AnimateOnReveal animation="content-slide">
+                        <p>
+                          <strong>
+                            Studio Mega has some of the top creative talent in
+                            portland area
+                          </strong>
+                        </p>
+                        <p>
+                          We're thrilled at each opportunity we have to partner
+                          with such an easy going, welcoming group of mega
+                          creatives.
+                        </p>
+                      </AnimateOnReveal>
                     </div>
                     <div className="col-2">
-                      <p>
-                        {" "}
-                        top creative talent in the Portland area. We're thrilled
-                        at each opportunity we have to partner with such an easy
-                        going, welcoming group of mega creatives. If you're ever
-                        in PDX, be sure to grab a drink with these fine people.
-                        Learn about how they've helped build and brand their
-                        little create oasis, New New Crusher Court.
-                      </p>
+                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                        <p>
+                          {" "}
+                          top creative talent in the Portland area. We're
+                          thrilled at each opportunity we have to partner with
+                          such an easy going, welcoming group of mega creatives.
+                          If you're ever in PDX, be sure to grab a drink with
+                          these fine people. Learn about how they've helped
+                          build and brand their little create oasis, New New
+                          Crusher Court.
+                        </p>
 
-                      <p>
-                        Like this project and want to chat about what we could
-                        do for you? Hit us up!
-                      </p>
+                        <p>
+                          Like this project and want to chat about what we could
+                          do for you? Hit us up!
+                        </p>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
