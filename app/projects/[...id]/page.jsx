@@ -551,7 +551,7 @@ const page = ({ params }) => {
 
                 <section className="module-image reveal reveal-show">
                   <img
-                    src="/carousel_01-slide_01.jpg"
+                    src="/Group 1.png"
                     alt="mobile home and navigation"
                     className="media"
                   />
@@ -577,7 +577,7 @@ const page = ({ params }) => {
 
                 <section className="module-image reveal reveal-show">
                   <img
-                    src="/carousel_01-slide_01.jpg"
+                    src="/Group 2.png"
                     alt="mobile home and navigation"
                     className="media"
                   />

@@ -10,6 +10,7 @@ export const projects = [
       "/Screenshot (8).png",
       "/Screenshot (9).png",
     ],
+    mobilePhotos: ["/Group 1.png", "/Group 2.png"],
     productionYear: 2023,
   },
   {

@@ -37,7 +37,7 @@ export default function Layout({ children }) {
     };
   }, [isVissible, prevPos]);
 
-  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "light-mode");
+  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "night-mode");
 
   useEffect(() => {
     setIsMounted(true);
@@ -48,7 +48,7 @@ export default function Layout({ children }) {
   useEffect(() => {
     if (pathname !== "/") {
       setUiMode("light-mode");
-    } else setUiMode("ultra-mode");
+    } else setUiMode("night-mode");
   }, [pathname]);
 
   return (
