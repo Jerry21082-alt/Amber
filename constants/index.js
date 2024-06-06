@@ -22,11 +22,9 @@ export const projects = [
     title1: "Scan",
     title2: "Mate",
     href: "/",
-    pagePhotos: [
-      "/carousel_01-slide_01.jpg",
-      "/carousel_01-slide_02.jpg",
-      "/carousel_01-slide_03.jpg",
-    ],
+    pagePhotos: ["/Group 3 (1).png", "/Group 4 (1).png"],
+    pagePhotos2: ["/Group 5 (2).png"],
+    mobilePhotos: ["/Group 6.png", "/Group 7.png"],
     productionYear: 2022,
   },
   {

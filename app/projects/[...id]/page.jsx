@@ -180,10 +180,9 @@ const page = ({ params }) => {
                             transition: "transform .5s ease-in-out",
                           }}
                         >
-                          <Image
+                          <img
                             src={`${photo}`}
                             alt="Home"
-                            fill
                             aria-selected="true"
                             className="is-selected"
                             style={{
@@ -381,10 +380,9 @@ const page = ({ params }) => {
                             transition: "transform .5s ease-in-out",
                           }}
                         >
-                          <Image
+                          <img
                             src={`${photo}`}
                             alt="Home"
-                            fill
                             aria-selected="true"
                             className="is-selected object-center object-cover"
                             style={{
@@ -564,7 +562,7 @@ const page = ({ params }) => {
 
                 <section className="module-image reveal reveal-show">
                   <Image
-                    src="/Group 1.png"
+                    src={`${projectDetails.mobilePhotos[0]}`}
                     alt="mobile home and navigation"
                     width={500}
                     height={500}
@@ -589,7 +587,7 @@ const page = ({ params }) => {
 
                 <section className="module-image reveal reveal-show">
                   <Image
-                    src="/Group 2.png"
+                    src={`${projectDetails.mobilePhotos[1]}`}
                     alt="mobile home and navigation"
                     className="media"
                     width={500}
