@@ -2,13 +2,18 @@ import { getRandomId } from "@/helpers";
 
 export const projects = [
   {
-    title1: "Digital",
-    title2: "Nest",
+    title1: "Step",
+    title2: "Style",
     href: "/",
     pagePhotos: [
-      "/Screenshot (7).png",
-      "/Screenshot (8).png",
-      "/Screenshot (9).png",
+      "/Screenshot (26).png",
+      "/Screenshot (27).png",
+      "/Screenshot (28).png",
+    ],
+    pagePhotos2: [
+      "/Screenshot (29).png",
+      "/Screenshot (30).png",
+      "/Screenshot (31).png",
     ],
     mobilePhotos: ["/Group 1.png", "/Group 2.png"],
     productionYear: 2023,

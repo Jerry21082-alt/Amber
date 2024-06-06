@@ -15,6 +15,7 @@ const page = ({ params }) => {
   const projectDetails = getProductDetails();
 
   const slides = projectDetails.pagePhotos;
+  const slides2 = projectDetails.pagePhotos2;
 
   const showSlide = (index) => {
     const totalSlides = slides.length;
@@ -129,12 +130,14 @@ const page = ({ params }) => {
                         <p>
                           <strong>
                             {projectDetails.title1} {""} {projectDetails.title2}{" "}
-                            is a brand design agency based in Portland, Oregon
+                            is a comprehensive and dynamic shoe e-commerce web
+                            application
                           </strong>
                         </p>
                         <p>
-                          With simplicity, flexibility and maintainablity in
-                          mind we build a website uniquely Mega
+                          This project showcases a full-fledged online store
+                          with a variety of features designed to enhance user
+                          experience and streamline the purchasing process.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -143,13 +146,15 @@ const page = ({ params }) => {
                       <AnimateOnReveal animation="content-slide" delay=".2s">
                         <p>
                           {" "}
-                          design agency based in Portland, Oregon. With
-                          simplicity, flexibility, and maintainability in mind
-                          we built a website uniquely mega. Powered by a Craft
-                          CMS back-end the website is easy to manage and update.
-                          There are several customizable content blocks that can
-                          be added and rearranged to make case studies be
-                          presented in a meaningful way.
+                          The application offers a full suite of functionalities
+                          typical of a robust e-commerce platform, including an
+                          intuitive homepage, detailed product pages, an
+                          efficient cart and checkout system, and a dedicated
+                          section for product reviews. By leveraging the power
+                          of Next.js, the web application benefits from
+                          server-side rendering, resulting in fast load times
+                          and improved SEO, which is crucial for attracting and
+                          retaining users.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -175,9 +180,10 @@ const page = ({ params }) => {
                             transition: "transform .5s ease-in-out",
                           }}
                         >
-                          <img
+                          <Image
                             src={`${photo}`}
                             alt="Home"
+                            fill
                             aria-selected="true"
                             className="is-selected"
                             style={{
@@ -307,9 +313,10 @@ const page = ({ params }) => {
                     <div className="col-1">
                       <AnimateOnReveal animation="content-slide">
                         <p>
-                          The home page features a randomly selected video,
-                          masked in a circle, with animated text describing
-                          Studio Mega's high-level process.
+                          A visually appealing and responsive homepage
+                          displaying featured products, promotional banners, and
+                          categories. Seamless navigation bar for easy access to
+                          different sections of the website.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -364,7 +371,7 @@ const page = ({ params }) => {
                       className="flickity-viewport"
                       style={{ touchAction: "pan-y" }}
                     >
-                      {slides.map((photo, idx) => (
+                      {slides2.map((photo, idx) => (
                         <div
                           key={idx}
                           className="flickity-slider"
@@ -374,11 +381,12 @@ const page = ({ params }) => {
                             transition: "transform .5s ease-in-out",
                           }}
                         >
-                          <img
+                          <Image
                             src={`${photo}`}
                             alt="Home"
+                            fill
                             aria-selected="true"
-                            className="is-selected"
+                            className="is-selected object-center object-cover"
                             style={{
                               position: "absolute",
                               left: `${idx * 100}%`,
@@ -427,7 +435,7 @@ const page = ({ params }) => {
                     </button>
 
                     <ol className="flickity-page-dots">
-                      {slides.map((slide, idx) => (
+                      {slides2.map((slide, idx) => (
                         <li
                           key={idx}
                           className={`dot ${
@@ -462,9 +470,9 @@ const page = ({ params }) => {
                             <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
                           </svg>
                         </button>
-                        <span className="current">{currentIndex + 1}</span>
+                        <span className="current">{currentIndexSec + 1}</span>
                         {"/"}
-                        <span className="total">{slides.length}</span>
+                        <span className="total">{slides2.length}</span>
 
                         <button
                           className="btn-gallery-right"
@@ -506,9 +514,11 @@ const page = ({ params }) => {
                     <div className="col-1">
                       <AnimateOnReveal animation="content-slide">
                         <p>
-                          The home page features a randomly selected video,
-                          masked in a circle, with animated text describing
-                          Studio Mega's high-level process.
+                          Detailed product listings with high-quality images,
+                          descriptions, and pricing information. Interactive
+                          carousel slider for product images, supporting touch
+                          swipe functionality for a smooth user experience on
+                          both desktop and mobile devices.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -516,9 +526,10 @@ const page = ({ params }) => {
                     <div className="col-2">
                       <AnimateOnReveal animation="content-slide" delay=".2s">
                         <p>
-                          We developed multiple content column layouts,
-                          carousels and media assets that provides an ease to
-                          the flow pages
+                          User-friendly cart interface that allows customers to
+                          review their selected items, adjust quantities, and
+                          remove items. Dynamic price calculations and real-time
+                          updates based on user interactions.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -526,11 +537,13 @@ const page = ({ params }) => {
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <img
+                  <Image
                     src="/carousel_01-slide_01.jpg"
                     alt={`${projectDetails.title1} ${""} ${
                       projectDetails.title2
                     }`}
+                    width={500}
+                    height={500}
                     className="media"
                   />
 
@@ -541,18 +554,20 @@ const page = ({ params }) => {
                         other&nbsp;agencies
                       </h6>
                       <p>
-                        vibrant colors, unique blending modes, and hover
-                        overkays can be seen here and in hoverable content
-                        throughout the website
+                        Utilized Tailwind CSS for rapid UI development, ensuring
+                        a consistent and modern design across the web
+                        application.
                       </p>
                     </AnimateOnReveal>
                   </div>
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <img
+                  <Image
                     src="/Group 1.png"
                     alt="mobile home and navigation"
+                    width={500}
+                    height={500}
                     className="media"
                   />
 
@@ -563,23 +578,22 @@ const page = ({ params }) => {
                       </h6>
 
                       <p>
-                        Inline auto playing video and animation can been seen on
-                        the home, work , and case study pages
-                      </p>
-
-                      <p>
-                        The animated mobile navigation content keep the mobile
-                        experience feeling last fluid
+                        StepStyle is meticulously designed to provide an
+                        exceptional mobile experience, ensuring that users can
+                        easily browse, select, and purchase products from any
+                        device.
                       </p>
                     </AnimateOnReveal>
                   </div>
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <img
+                  <Image
                     src="/Group 2.png"
                     alt="mobile home and navigation"
                     className="media"
+                    width={500}
+                    height={500}
                   />
 
                   <div className="info">
@@ -605,14 +619,14 @@ const page = ({ params }) => {
                       <AnimateOnReveal animation="content-slide">
                         <p>
                           <strong>
-                            Studio Mega has some of the top creative talent in
-                            portland area
+                            Dynamic price calculations and real-time updates
+                            based on user interactions.
                           </strong>
                         </p>
                         <p>
-                          We're thrilled at each opportunity we have to partner
-                          with such an easy going, welcoming group of mega
-                          creatives.
+                          Instant Price Adjustments: Reflects changes instantly.
+                          Live Cart Updates: Real-time item quantity changes.
+                          Auto Tax Calculation: Adjusts based on location.
                         </p>
                       </AnimateOnReveal>
                     </div>
@@ -620,13 +634,16 @@ const page = ({ params }) => {
                       <AnimateOnReveal animation="content-slide" delay=".2s">
                         <p>
                           {" "}
-                          top creative talent in the Portland area. We're
-                          thrilled at each opportunity we have to partner with
-                          such an easy going, welcoming group of mega creatives.
-                          If you're ever in PDX, be sure to grab a drink with
-                          these fine people. Learn about how they've helped
-                          build and brand their little create oasis, New New
-                          Crusher Court.
+                          This project demonstrates my proficiency in building
+                          complex, user-centric web applications using modern
+                          frontend technologies. By integrating Next.js,
+                          Tailwind CSS, and advanced form validation techniques,
+                          I created a robust e-commerce platform that provides
+                          an exceptional shopping experience for users. The
+                          implementation of a responsive design and interactive
+                          elements like the carousel slider further showcases my
+                          ability to deliver high-quality, scalable solutions in
+                          the fast-paced world of e-commerce.
                         </p>
 
                         <p>
