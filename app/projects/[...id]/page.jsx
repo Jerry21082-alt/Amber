@@ -561,11 +561,9 @@ const page = ({ params }) => {
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <Image
+                  <img
                     src={`${projectDetails.mobilePhotos[0]}`}
                     alt="mobile home and navigation"
-                    width={500}
-                    height={500}
                     className="media"
                   />
 
@@ -586,12 +584,10 @@ const page = ({ params }) => {
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <Image
+                  <img
                     src={`${projectDetails.mobilePhotos[1]}`}
                     alt="mobile home and navigation"
                     className="media"
-                    width={500}
-                    height={500}
                   />
 
                   <div className="info">

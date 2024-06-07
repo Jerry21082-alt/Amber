@@ -32,10 +32,17 @@ export const projects = [
     title2: "Verse",
     href: "/",
     pagePhotos: [
-      "/carousel_01-slide_01.jpg",
-      "/carousel_01-slide_02.jpg",
-      "/carousel_01-slide_03.jpg",
+      "/Rectangle.png",
+      "/Screenshot (49).png",
+      "/Screenshot (51).png",
+      "/Screenshot (52).png",
     ],
+    pagePhotos2: [
+      "/Screenshot (53).png",
+      "/Screenshot (54).png",
+      "/Screenshot (55).png",
+    ],
+    mobilePhotos: ["/Group y.png", "/Group x.png"],
     productionYear: 2023,
   },
   {
