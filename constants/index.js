@@ -33,16 +33,17 @@ export const projects = [
     href: "/",
     pagePhotos: [
       "/Rectangle.png",
-      "/Screenshot (49).png",
-      "/Screenshot (51).png",
-      "/Screenshot (52).png",
+      "/Rectangle2.png",
+      "/Rectangle3.png",
+      "/Rectangle4.png",
+      "/Rectangle5.png",
+      "/Rectangle6.png",
     ],
-    pagePhotos2: [
-      "/Screenshot (53).png",
-      "/Screenshot (54).png",
-      "/Screenshot (55).png",
-    ],
-    mobilePhotos: ["/Group y.png", "/Group x.png"],
+    pagePhotos2: ["/Rectangle7.png", "/Rectangle8.png", "/Rectangle9.png"],
+    pagePhot3: "/Rectangle15.png",
+    introPhot: "/still-life-arrangement-with-cryptocurrency (1).jpg",
+
+    mobilePhotos: ["/Group y.png", "/Group 10.png"],
     productionYear: 2023,
   },
   {

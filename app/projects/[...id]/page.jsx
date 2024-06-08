@@ -37,7 +37,7 @@ const page = ({ params }) => {
   };
 
   const showSlideSec = (index) => {
-    const totalSlides = slides.length;
+    const totalSlides = slides2.length;
     if (index >= totalSlides) {
       setCurrentIndexSec(0);
     } else if (index < 0) {
@@ -86,7 +86,12 @@ const page = ({ params }) => {
                 className="content"
                 // style={{ transform: "translate3d(0, -0.0019px, 0)" }}
               >
-                <section className="hero">
+                <section
+                  className="hero"
+                  style={{
+                    backgroundImage: `url("/still-life-arrangement-with-cryptocurrency\ \(1\).jpg")`,
+                  }}
+                >
                   <div
                     className="title-container parallax-vertical-mm-bt"
                     data-from="-35%"
@@ -535,13 +540,11 @@ const page = ({ params }) => {
                 </section>
 
                 <section className="module-image reveal reveal-show">
-                  <Image
-                    src="/carousel_01-slide_01.jpg"
+                  <img
+                    src={projectDetails.pagePhot3}
                     alt={`${projectDetails.title1} ${""} ${
                       projectDetails.title2
                     }`}
-                    width={500}
-                    height={500}
                     className="media"
                   />
 
