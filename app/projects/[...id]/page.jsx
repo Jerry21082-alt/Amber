@@ -89,7 +89,7 @@ const page = ({ params }) => {
                 <section
                   className="hero"
                   style={{
-                    backgroundImage: `url("/still-life-arrangement-with-cryptocurrency\ \(1\).jpg")`,
+                    backgroundImage: `url("${projectDetails.introPhoto}")`,
                   }}
                 >
                   <div
@@ -442,7 +442,7 @@ const page = ({ params }) => {
                         <li
                           key={idx}
                           className={`dot ${
-                            slides.indexOf(slide) === currentIndex
+                            slides2.indexOf(slide) === currentIndexSec
                               ? "is-selected"
                               : ""
                           }`}

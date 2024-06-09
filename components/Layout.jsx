@@ -46,10 +46,8 @@ export default function Layout({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname === "/") {
-      setUiMode("night-mode");
-    } else if (pathname === "/projects/cryptoverse") {
-      setUiMode("ultra-mode");
+    if (pathname !== "/") {
+      setUiMode("light-mode");
     } else {
       setUiMode("night-mode");
     }

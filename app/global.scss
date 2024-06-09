@@ -944,19 +944,20 @@ div {
 .flex-3 .flickity-page-dots,
 .flickity-page-dots {
   display: flex;
+  justify-content: center;
   position: static;
   margin: 0;
   text-align: left;
 }
 
 .flickity-page-dots .dot {
-  height: 2px;
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+  border-radius: 50%;
   background-color: #ccc;
   opacity: 1;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
 
   &.is-selected {
     background-color: #000;
@@ -1321,11 +1322,11 @@ button.link {
 }
 
 .content-slide {
-  animation: slideUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .content-rotate {
-  animation: rotate 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation: rotate 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes rotate {
@@ -1342,7 +1343,7 @@ button.link {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 5px, 0);
   }
   to {
     opacity: 1;
