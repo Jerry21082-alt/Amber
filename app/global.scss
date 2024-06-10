@@ -262,7 +262,10 @@ body:not(.isMobile) {
 }
 
 .night-mode {
-  background-color: #000;
+  background: url("../public/Free\ Photo\ _\ Grunge\ background\ 1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: $offwhite;
 
   .ui {
