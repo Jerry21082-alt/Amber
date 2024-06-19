@@ -12,7 +12,6 @@ const page = ({ params }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexSec, setCurrentIndexSec] = useState(0);
-  const { uiMode } = contextFunc();
 
   const projectDetails = getProductDetails();
 
@@ -100,12 +99,7 @@ const page = ({ params }) => {
                     data-to="25%"
                     data-timing="quadOut"
                   >
-                    <h1
-                      className="title"
-                      style={{
-                        stroke: uiMode === "night-mode" ? "#FFF" : "#000",
-                      }}
-                    >
+                    <h1 className="title">
                       {projectDetails.title1}
                       <br />
                       {projectDetails.title2}
@@ -661,21 +655,8 @@ const page = ({ params }) => {
 
                 <section className="module-project reveal parallax-vertical-tb-bt parallax-no-mobile reveal-show">
                   <Link href={``}>
-                    <h2
-                      className="next-project"
-                      style={{
-                        color: uiMode === "night-mode" ? "#FFF" : "#000",
-                      }}
-                    >
-                      next project
-                    </h2>
-                    <span
-                      className="project-name"
-                      style={{
-                        WebkitTextStrokeColor:
-                          uiMode === "night-mode" ? "#FFF" : "#000",
-                      }}
-                    >
+                    <h2 className="next-project">next project</h2>
+                    <span className="project-name">
                       {projectDetails.title1} <br />
                       {projectDetails.title2}
                     </span>
