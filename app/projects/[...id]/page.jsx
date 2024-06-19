@@ -1,9 +1,8 @@
 "use client";
 
 import AnimateOnReveal from "@/components/AnimateOnReveal";
-import { contextFunc } from "@/components/stateContext/useStateContext";
 import { projects } from "@/constants";
-import Image from "next/image";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -12,8 +11,14 @@ const page = ({ params }) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexSec, setCurrentIndexSec] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+  const [uiMode, setUiMode] = useLocalStorage("uiMode", "ultra-mode");
 
   const projectDetails = getProductDetails();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const slides = projectDetails.pagePhotos;
   const slides2 = projectDetails.pagePhotos2;
@@ -655,8 +660,26 @@ const page = ({ params }) => {
 
                 <section className="module-project reveal parallax-vertical-tb-bt parallax-no-mobile reveal-show">
                   <Link href={``}>
-                    <h2 className="next-project">next project</h2>
-                    <span className="project-name">
+                    <h2
+                      className="next-project"
+                      style={{
+                        color:
+                          isMounted && uiMode === "night-mode"
+                            ? "#fff"
+                            : "#000",
+                      }}
+                    >
+                      next project
+                    </h2>
+                    <span
+                      className="project-name"
+                      style={{
+                        WebkitTextStrokeColor:
+                          isMounted && uiMode === "night-mode"
+                            ? "#fff"
+                            : "#000",
+                      }}
+                    >
                       {projectDetails.title1} <br />
                       {projectDetails.title2}
                     </span>

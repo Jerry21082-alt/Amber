@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import About from "@/components/About";
 import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 export default function Layout({ children }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -12,7 +13,12 @@ export default function Layout({ children }) {
   const [navTop, setNavTop] = useState(false);
   const [isVissible, setIsVissible] = useState(false);
   const [prevPos, setPrevpos] = useState(0);
-  const [uiMode, setUiMode] = useState("ultra-mode");
+  const [isMounted, setIsMounted] = useState(false);
+  const [uiMode, setUiMode] = useLocalStorage("uiMode", "ultra-mode");
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleScroll = () => {
     const currentPos = window.scrollY;
@@ -37,7 +43,7 @@ export default function Layout({ children }) {
 
   return (
     <body
-      className={`home-page ${uiMode} ${
+      className={`home-page ${isMounted && uiMode} ${
         mobileNavOpen ? "mobileNavOpen" : null
       } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""} ${
         isVissible || showAbout ? "isvissible" : ""
