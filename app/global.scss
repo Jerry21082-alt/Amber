@@ -121,7 +121,7 @@ body:not(.isMobile) {
   }
 
   .ui .logo {
-    color: #ffbf00;
+    color: #000;
 
     @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #000)) {
       -webkit-text-stroke: 1px #000;

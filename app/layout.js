@@ -8,6 +8,7 @@ import "../styles/flickity.scss";
 import "../styles/mixing.scss";
 
 import Layout from "@/components/Layout";
+import UseStateContext from "@/components/stateContext/useStateContext";
 
 export const metadata = {
   title: "Amber Dev.",
@@ -18,9 +19,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <Layout>
-        <div>{children}</div>
-      </Layout>
+      <UseStateContext>
+        <Layout>
+          <div>{children}</div>
+        </Layout>
+      </UseStateContext>
     </html>
   );
 };

@@ -5,16 +5,15 @@ import { useEffect, useState } from "react";
 import About from "@/components/About";
 import Nav from "@/components/Nav";
 import Curtain from "@/components/Curtain";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { usePathname } from "next/navigation";
+import { contextFunc } from "./stateContext/useStateContext";
 
 export default function Layout({ children }) {
-  const [isMounted, setIsMounted] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
   const [navTop, setNavTop] = useState(false);
   const [isVissible, setIsVissible] = useState(false);
   const [prevPos, setPrevpos] = useState(0);
+  const { uiMode, setUiMode } = contextFunc();
 
   const handleScroll = () => {
     const currentPos = window.scrollY;
@@ -37,25 +36,9 @@ export default function Layout({ children }) {
     };
   }, [isVissible, prevPos]);
 
-  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "ultra-mode");
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  // const pathname = usePathname();
-
-  // useEffect(() => {
-  //   if (pathname !== "/") {
-  //     setUiMode("light-mode");
-  //   } else {
-  //     setUiMode("night-mode");
-  //   }
-  // }, [pathname]);
-
   return (
     <body
-      className={`home-page ${isMounted ? uiMode : ""} ${
+      className={`home-page ${uiMode} ${
         mobileNavOpen ? "mobileNavOpen" : null
       } ${showAbout ? "aboutShow" : null} ${navTop ? "navTop" : ""} ${
         isVissible || showAbout ? "isvissible" : ""
