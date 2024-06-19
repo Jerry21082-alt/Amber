@@ -140,33 +140,16 @@ const page = ({ params }) => {
                       <AnimateOnReveal animation="content-slide">
                         <p>
                           <strong>
-                            {projectDetails.title1} {""} {projectDetails.title2}{" "}
-                            is a comprehensive and dynamic shoe e-commerce web
-                            application
+                            {projectDetails.overview.section_1.intro}
                           </strong>
                         </p>
-                        <p>
-                          This project showcases a full-fledged online store
-                          with a variety of features designed to enhance user
-                          experience and streamline the purchasing process.
-                        </p>
+                        <p>{projectDetails.overview.section_1.paragraph_1}</p>
                       </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
                       <AnimateOnReveal animation="content-slide" delay=".2s">
-                        <p>
-                          {" "}
-                          The application offers a full suite of functionalities
-                          typical of a robust e-commerce platform, including an
-                          intuitive homepage, detailed product pages, an
-                          efficient cart and checkout system, and a dedicated
-                          section for product reviews. By leveraging the power
-                          of Next.js, the web application benefits from
-                          server-side rendering, resulting in fast load times
-                          and improved SEO, which is crucial for attracting and
-                          retaining users.
-                        </p>
+                        <p>{projectDetails.overview.section_1.paragraph_2}</p>
                       </AnimateOnReveal>
                     </div>
                   </div>
@@ -302,15 +285,15 @@ const page = ({ params }) => {
                         </button>
                       </div>
                       <h6 className="title">
-                        Start with an idea <br /> and make it better
+                        {projectDetails.overview.section_2.side.heading}
                       </h6>
                       <div className="description">
                         <p>
-                          - Home
-                          <br />
-                          - Work
-                          <br />
-                          - Studio
+                          - {projectDetails.overview.section_2.side.list[0]}
+                          <br />-{" "}
+                          {projectDetails.overview.section_2.side.list[1]}
+                          <br />-{" "}
+                          {projectDetails.overview.section_2.side.list[2]}
                           <br />
                         </p>
                       </div>
@@ -322,22 +305,13 @@ const page = ({ params }) => {
                   <div className="summary">
                     <div className="col-1">
                       <AnimateOnReveal animation="content-slide">
-                        <p>
-                          A visually appealing and responsive homepage
-                          displaying featured products, promotional banners, and
-                          categories. Seamless navigation bar for easy access to
-                          different sections of the website.
-                        </p>
+                        <p>{projectDetails.overview.section_2.paragraph_1}</p>
                       </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
                       <AnimateOnReveal animation="content-slide" delay=".2s">
-                        <p>
-                          We developed multiple content column layouts,
-                          carousels and media assets that provides an ease to
-                          the flow pages
-                        </p>
+                        <p>{projectDetails.overview.section_2.paragraph_2}</p>
                       </AnimateOnReveal>
                     </div>
                   </div>
@@ -352,22 +326,9 @@ const page = ({ params }) => {
                   <AnimateOnReveal animation="content-rotate">
                     <blockquote>
                       <span className="quote-left">"</span>
-                      <p>
-                        Finding someone that can not only bring expertise and
-                        technical ability but also creativity to enhance the
-                        experience is hard to find. But Eric does just that.
-                      </p>
-                      <p>
-                        When we work with him, we’re not just handing off a
-                        direction and waiting for him to implement it. We
-                        collaborate throughout the process and the end result is
-                        always better than what we initially thought was
-                        possible.
-                      </p>
-                      <p>
-                        On top of that, he’s an awesome dude, good communicator
-                        and fun to be around.
-                      </p>
+                      <p>{projectDetails.overview.section_3.paragraph_1}</p>
+                      <p>{projectDetails.overview.section_3.paragraph_2}</p>
+                      <p>{projectDetails.overview.section_3.paragraph_3}</p>
                     </blockquote>
                   </AnimateOnReveal>
                 </section>
@@ -502,15 +463,15 @@ const page = ({ params }) => {
                         </button>
                       </div>
                       <h6 className="title">
-                        Start with an idea <br /> and make it better
+                        {projectDetails.overview.section_4.side.heading}
                       </h6>
                       <div className="description">
                         <p>
-                          - Home
-                          <br />
-                          - Work
-                          <br />
-                          - Studio
+                          - {projectDetails.overview.section_4.side.list - 0}
+                          <br />-{" "}
+                          {projectDetails.overview.section_4.side.list[1]}
+                          <br />-{" "}
+                          {projectDetails.overview.section_4.side.list[2]}
                           <br />
                         </p>
                       </div>
@@ -522,24 +483,13 @@ const page = ({ params }) => {
                   <div className="summary">
                     <div className="col-1">
                       <AnimateOnReveal animation="content-slide">
-                        <p>
-                          Detailed product listings with high-quality images,
-                          descriptions, and pricing information. Interactive
-                          carousel slider for product images, supporting touch
-                          swipe functionality for a smooth user experience on
-                          both desktop and mobile devices.
-                        </p>
+                        <p>{projectDetails.overview.section_4.paragraph_1}</p>
                       </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
                       <AnimateOnReveal animation="content-slide" delay=".2s">
-                        <p>
-                          User-friendly cart interface that allows customers to
-                          review their selected items, adjust quantities, and
-                          remove items. Dynamic price calculations and real-time
-                          updates based on user interactions.
-                        </p>
+                        <p>{projectDetails.overview.section_4.paragraph_2}</p>
                       </AnimateOnReveal>
                     </div>
                   </div>
@@ -557,14 +507,9 @@ const page = ({ params }) => {
                   <div className="info">
                     <AnimateOnReveal animation="content-rotate">
                       <h6 className="title">
-                        Studio Mega own branding set them apart from
-                        other&nbsp;agencies
+                        {projectDetails.overview.section_5[0]}
                       </h6>
-                      <p>
-                        Utilized Tailwind CSS for rapid UI development, ensuring
-                        a consistent and modern design across the web
-                        application.
-                      </p>
+                      <p>{projectDetails.overview.section_5[1]}</p>
                     </AnimateOnReveal>
                   </div>
                 </section>
@@ -579,15 +524,10 @@ const page = ({ params }) => {
                   <div className="info">
                     <AnimateOnReveal animation="content-rotate" delay=".2s">
                       <h6 className="title">
-                        A fully featured mobile experience .
+                        {projectDetails.overview.section_6[0]}
                       </h6>
 
-                      <p>
-                        StepStyle is meticulously designed to provide an
-                        exceptional mobile experience, ensuring that users can
-                        easily browse, select, and purchase products from any
-                        device.
-                      </p>
+                      <p>{projectDetails.overview.section_6[1]}</p>
                     </AnimateOnReveal>
                   </div>
                 </section>
@@ -601,17 +541,13 @@ const page = ({ params }) => {
 
                   <div className="info">
                     <AnimateOnReveal animation="content-rotate">
-                      <h6 className="title">Touch interactions</h6>
+                      <h6 className="title">
+                        {projectDetails.overview.section_7[0]}
+                      </h6>
 
-                      <p>
-                        Inline auto playing video and animation can been seen on
-                        the home, work , and case study pages
-                      </p>
+                      <p>{projectDetails.overview.section_7[1]}</p>
 
-                      <p>
-                        The animated mobile navigation content keep the mobile
-                        experience feeling last fluid
-                      </p>
+                      <p>{projectDetails.overview.section_7[2]}</p>
                     </AnimateOnReveal>
                   </div>
                 </section>
@@ -622,32 +558,15 @@ const page = ({ params }) => {
                       <AnimateOnReveal animation="content-slide">
                         <p>
                           <strong>
-                            Dynamic price calculations and real-time updates
-                            based on user interactions.
+                            {projectDetails.overview.section_8.heading}
                           </strong>
                         </p>
-                        <p>
-                          Instant Price Adjustments: Reflects changes instantly.
-                          Live Cart Updates: Real-time item quantity changes.
-                          Auto Tax Calculation: Adjusts based on location.
-                        </p>
+                        <p>{projectDetails.overview.section_8.paragraph_1}</p>
                       </AnimateOnReveal>
                     </div>
                     <div className="col-2">
                       <AnimateOnReveal animation="content-slide" delay=".2s">
-                        <p>
-                          {" "}
-                          This project demonstrates my proficiency in building
-                          complex, user-centric web applications using modern
-                          frontend technologies. By integrating Next.js,
-                          Tailwind CSS, and advanced form validation techniques,
-                          I created a robust e-commerce platform that provides
-                          an exceptional shopping experience for users. The
-                          implementation of a responsive design and interactive
-                          elements like the carousel slider further showcases my
-                          ability to deliver high-quality, scalable solutions in
-                          the fast-paced world of e-commerce.
-                        </p>
+                        <p>{projectDetails.overview.section_8.paragraph_2}</p>
 
                         <p>
                           Like this project and want to chat about what we could
