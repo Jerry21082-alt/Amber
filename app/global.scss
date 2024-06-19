@@ -121,7 +121,7 @@ body:not(.isMobile) {
   }
 
   .ui .logo {
-    color: #000;
+    color: #ffbf00;
 
     @supports ((-webkit-text-stroke: 1px #fff) or (text-stroke: 1px #000)) {
       -webkit-text-stroke: 1px #000;
@@ -262,10 +262,7 @@ body:not(.isMobile) {
 }
 
 .night-mode {
-  background: url("../public/Free\ Photo\ _\ Grunge\ background\ 1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: #000;
   color: $offwhite;
 
   .ui {
@@ -419,7 +416,7 @@ body:not(.isMobile) {
 
 .light-mode {
   .color-mode .dot {
-    background-color: #000;
+    background-color: #fff;
   }
 
   .color-mode {

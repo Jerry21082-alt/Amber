@@ -37,21 +37,21 @@ export default function Layout({ children }) {
     };
   }, [isVissible, prevPos]);
 
-  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "night-mode");
+  const [uiMode, setUiMode] = useLocalStorage("uiColorMode", "ultra-mode");
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
-  useEffect(() => {
-    if (pathname !== "/") {
-      setUiMode("light-mode");
-    } else {
-      setUiMode("night-mode");
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (pathname !== "/") {
+  //     setUiMode("light-mode");
+  //   } else {
+  //     setUiMode("night-mode");
+  //   }
+  // }, [pathname]);
 
   return (
     <body

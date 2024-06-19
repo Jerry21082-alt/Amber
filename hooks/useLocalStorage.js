@@ -7,7 +7,7 @@ export const useLocalStorage = (key, defaultValue) => {
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
-    if (value == "undefined") {
+    if (value === "undefined") {
       localStorage.removeItem(key);
     } else {
       localStorage.setItem(key, value);
