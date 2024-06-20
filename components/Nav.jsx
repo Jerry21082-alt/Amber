@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 
@@ -63,26 +63,26 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
           <nav className="social">
             <ul>
               <li>
-                <Link
-                  href="/"
+                <a
+                  href="https://x.com/Jerryjersey7"
                   className="no-barba"
                   target="_blank"
                   rel="noopener"
                 >
                   <span>02</span>
                   <strong>twitter</strong>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
-                  href="/"
+                <a
+                  href="https://www.linkedin.com/in/jerry-jersey-054ab7219/"
                   className="no-barba"
                   target="_blank"
                   rel="noopener"
                 >
                   <span>03</span>
                   <strong>linkedIn</strong>
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

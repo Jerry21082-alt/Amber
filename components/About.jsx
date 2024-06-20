@@ -61,12 +61,12 @@ const About = ({ setShowAbout }) => {
             <ul>
               <li>HTML5</li>
               <li>CSS3</li>
-              <li>Javascript</li>
+              <li>Javascript(ES6+)</li>
               <li>Typescript</li>
               <li>React js</li>
               <li>Next js</li>
-              <li>Node & Express js</li>
-              <li>MongoDB</li>
+              <li>Git</li>
+              <li>Node</li>
             </ul>
           </div>
         </div>
