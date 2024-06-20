@@ -116,11 +116,12 @@ const page = ({ params }) => {
                     <AnimateOnReveal animation="content-slide" delay=".4s">
                       <h5>
                         <a
-                          href="www.metaforce.com"
+                          href={projectDetails.href}
                           target="_blank"
                           rel="noopener"
+                          style={{ color: "blue" }}
                         >
-                          {`www.${projectLink}.com`}
+                          {projectDetails.href}
                         </a>
                       </h5>
                       <h6>
@@ -327,8 +328,6 @@ const page = ({ params }) => {
                     <blockquote>
                       <span className="quote-left">"</span>
                       <p>{projectDetails.overview.section_3.paragraph_1}</p>
-                      <p>{projectDetails.overview.section_3.paragraph_2}</p>
-                      <p>{projectDetails.overview.section_3.paragraph_3}</p>
                     </blockquote>
                   </AnimateOnReveal>
                 </section>
@@ -467,7 +466,7 @@ const page = ({ params }) => {
                       </h6>
                       <div className="description">
                         <p>
-                          - {projectDetails.overview.section_4.side.list - 0}
+                          - {projectDetails.overview.section_4.side.list[0]}
                           <br />-{" "}
                           {projectDetails.overview.section_4.side.list[1]}
                           <br />-{" "}
