@@ -127,6 +127,16 @@ const page = ({ params }) => {
                       <h6>
                         {projectDetails.title1} {""} {projectDetails.title2}
                       </h6>
+                      <h6>
+                        Github link:
+                        <a
+                          href={projectDetails.github}
+                          target="_blank"
+                          style={{ color: "blue" }}
+                        >
+                          {projectDetails.github}
+                        </a>
+                      </h6>
                       <span className="title">Agency:</span>
                       <span>Amber Dev</span>
                       <span className="title">Lead Front-end Developer:</span>

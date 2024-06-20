@@ -5,6 +5,7 @@ export const projects = [
     title1: "Step",
     title2: "Style",
     href: "https://step-style.vercel.app/",
+    github: "https://github.com/Jerry21082-alt/StepStyle",
     pagePhotos: ["/Rectangleg.png", "/Rectangleh.png", "/Rectanglei.png"],
     pagePhotos2: ["/Rectanglej.png", "/Rectanglek.png"],
     pagePhot3: "/Rectanglel.png",
@@ -72,6 +73,7 @@ export const projects = [
     title1: "Scan",
     title2: "Mate",
     href: "https://qr-mate.vercel.app/",
+    github: "https://github.com/Jerry21082-alt/QrMate",
     pagePhotos: ["/Group a.png", "/Group b.png"],
     pagePhotos2: ["/Group c.png"],
     pagePhot3: "/Group d.png",
@@ -140,6 +142,7 @@ export const projects = [
     title1: "Block",
     title2: "Vault",
     href: "https://block-vault.vercel.app/",
+    github: "https://github.com/Jerry21082-alt/BlockVault",
     pagePhotos: [
       "/Rectangle.png",
       "/Rectangle2.png",
