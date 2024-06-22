@@ -56,6 +56,17 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
                   <strong>about</strong>
                 </button>
               </li>
+              <li className="about-li">
+                <a
+                  href="https://drive.google.com/file/d/1tYjJ_hKUSa_wSSc85WIGjGGhfz8S9Iin/view?usp=sharing"
+                  target="_blank"
+                  aria-label="Resume"
+                  className="link"
+                >
+                  <span>02</span>
+                  <strong>resume</strong>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -69,7 +80,7 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
                   target="_blank"
                   rel="noopener"
                 >
-                  <span>02</span>
+                  <span>03</span>
                   <strong>twitter</strong>
                 </a>
               </li>
@@ -80,7 +91,7 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
                   target="_blank"
                   rel="noopener"
                 >
-                  <span>03</span>
+                  <span>04</span>
                   <strong>linkedIn</strong>
                 </a>
               </li>

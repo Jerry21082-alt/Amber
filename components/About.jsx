@@ -63,10 +63,10 @@ const About = ({ setShowAbout }) => {
               <li>CSS3</li>
               <li>Javascript(ES6+)</li>
               <li>Typescript</li>
-              <li>React js</li>
-              <li>Next js</li>
+              <li>React.js</li>
+              <li>Next.js</li>
               <li>Git</li>
-              <li>Node</li>
+              <li>Node.js</li>
             </ul>
           </div>
         </div>

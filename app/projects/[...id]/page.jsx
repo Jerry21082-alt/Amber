@@ -208,8 +208,9 @@ const page = ({ params }) => {
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        fill={
+                          isMounted && uiMode === "night-mode" ? "#fff" : "#000"
+                        }
                         viewBox="0 0 20 20"
                         className="flickity-button-icon"
                       >
@@ -227,8 +228,9 @@ const page = ({ params }) => {
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        fill={
+                          isMounted && uiMode === "night-mode" ? "#fff" : "#000"
+                        }
                         viewBox="0 0 20 20"
                         className="flickity-button-icon"
                       >
@@ -266,8 +268,11 @@ const page = ({ params }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             id="left-arrow"
-                            // width="20px"
-                            // height="20px"
+                            fill={
+                              isMounted && uiMode === "night-mode"
+                                ? "#fff"
+                                : "#000"
+                            }
                             style={{ width: "100%", height: "100%" }}
                           >
                             <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
@@ -290,6 +295,11 @@ const page = ({ params }) => {
                             // width="20px"
                             // height="20px"
                             style={{ width: "100%", height: "100%" }}
+                            fill={
+                              isMounted && uiMode === "night-mode"
+                                ? "#fff"
+                                : "#000"
+                            }
                           >
                             <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>
                           </svg>
@@ -384,8 +394,9 @@ const page = ({ params }) => {
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        fill={
+                          isMounted && uiMode === "night-mode" ? "#fff" : "#000"
+                        }
                         viewBox="0 0 20 20"
                         className="flickity-button-icon"
                       >
@@ -403,8 +414,9 @@ const page = ({ params }) => {
                       <svg
                         version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
+                        fill={
+                          isMounted && uiMode === "night-mode" ? "#fff" : "#000"
+                        }
                         viewBox="0 0 20 20"
                         className="flickity-button-icon"
                       >
@@ -442,8 +454,11 @@ const page = ({ params }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             id="left-arrow"
-                            // width="20px"
-                            // height="20px"
+                            fill={
+                              isMounted && uiMode === "night-mode"
+                                ? "#fff"
+                                : "#000"
+                            }
                             style={{ width: "100%", height: "100%" }}
                           >
                             <path d="M1.293,12.707a1,1,0,0,1,0-1.414l5-5A1,1,0,0,1,7.707,7.707L4.414,11H22a1,1,0,0,1,0,2H4.414l3.293,3.293a1,1,0,1,1-1.414,1.414Z"></path>
@@ -463,8 +478,11 @@ const page = ({ params }) => {
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
                             id="right-arrow"
-                            // width="20px"
-                            // height="20px"
+                            fill={
+                              isMounted && uiMode === "night-mode"
+                                ? "#fff"
+                                : "#000"
+                            }
                             style={{ width: "100%", height: "100%" }}
                           >
                             <path d="M22.707,12.707a1,1,0,0,0,0-1.414l-6-6a1,1,0,0,0-1.414,1.414L19.586,11H2a1,1,0,0,0,0,2H19.586l-4.293,4.293a1,1,0,0,0,1.414,1.414Z"></path>

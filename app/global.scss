@@ -232,7 +232,7 @@ body:not(.isMobile) {
     &.projects li.isSelected a,
     &.outro .projects li.isSelected:hover a {
       @supports (
-        (-webkit-text-stroke: 2px $offwhite) or (text-stroke: 2px #000)
+        (-webkit-text-stroke: 1px $offwhite) or (text-stroke: 1px #000)
       ) {
         color: transparent;
         transition: color 0.5s 0.5s, opacity 1s;
