@@ -1,6 +1,5 @@
 "use client";
 
-import AnimateOnReveal from "@/components/AnimateOnReveal";
 import { projects } from "@/constants";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import Link from "next/link";
@@ -73,9 +72,7 @@ const page = ({ params }) => {
     return projectDetails;
   }
 
-  const projectLink = projectDetails.title1
-    .concat(projectDetails.title2)
-    .toLocaleLowerCase();
+  const title = projectDetails.title1.concat(projectDetails.title2);
 
   return (
     <div id="barbar-wrapper" aria-live="polite">
@@ -113,20 +110,19 @@ const page = ({ params }) => {
                 </section>
                 <section className="intro reveal reveal-show">
                   <div className="credits">
-                    <AnimateOnReveal animation="content-slide" delay=".4s">
-                      <h5>
+                    <div>
+                      <h6>
+                        visit site---
                         <a
                           href={projectDetails.href}
                           target="_blank"
                           rel="noopener"
                           style={{ color: "blue" }}
                         >
-                          {projectDetails.href}
+                          {title}.com
                         </a>
-                      </h5>
-                      <h6>
-                        {projectDetails.title1} {""} {projectDetails.title2}
                       </h6>
+
                       <h6>
                         Github link:
                         <a
@@ -143,25 +139,25 @@ const page = ({ params }) => {
                       <span>Effiong Jerry</span>
                       <span className="title">Lead Back-end Developer:</span>
                       <span>Effiong Jerry</span>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
 
                   <div className="summary reveal">
                     <div className="col-1">
-                      <AnimateOnReveal animation="content-slide">
+                      <div>
                         <p>
                           <strong>
                             {projectDetails.overview.section_1.intro}
                           </strong>
                         </p>
                         <p>{projectDetails.overview.section_1.paragraph_1}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
 
                     <div className="col-2">
-                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                      <div>
                         <p>{projectDetails.overview.section_1.paragraph_2}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -256,7 +252,7 @@ const page = ({ params }) => {
                   </div>
 
                   <div className="info">
-                    <AnimateOnReveal animation="content-rotate">
+                    <div>
                       <div className="pagination">
                         <button
                           className="btn-gallery-left"
@@ -318,22 +314,22 @@ const page = ({ params }) => {
                           <br />
                         </p>
                       </div>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <AnimateOnReveal animation="content-slide">
+                      <div>
                         <p>{projectDetails.overview.section_2.paragraph_1}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
 
                     <div className="col-2">
-                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                      <div>
                         <p>{projectDetails.overview.section_2.paragraph_2}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -344,12 +340,12 @@ const page = ({ params }) => {
                   data-to="10%"
                   data-timing="quadOut"
                 >
-                  <AnimateOnReveal animation="content-rotate">
+                  <div>
                     <blockquote>
                       <span className="quote-left">"</span>
                       <p>{projectDetails.overview.section_3.paragraph_1}</p>
                     </blockquote>
-                  </AnimateOnReveal>
+                  </div>
                 </section>
 
                 <section className="module-gallery reveal reveal-show">
@@ -442,7 +438,7 @@ const page = ({ params }) => {
                   </div>
 
                   <div className="info">
-                    <AnimateOnReveal animation="content-rotate">
+                    <div>
                       <div className="pagination">
                         <button
                           className="btn-gallery-left"
@@ -502,22 +498,22 @@ const page = ({ params }) => {
                           <br />
                         </p>
                       </div>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <AnimateOnReveal animation="content-slide">
+                      <div>
                         <p>{projectDetails.overview.section_4.paragraph_1}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
 
                     <div className="col-2">
-                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                      <div>
                         <p>{projectDetails.overview.section_4.paragraph_2}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -532,12 +528,12 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <AnimateOnReveal animation="content-rotate">
+                    <div>
                       <h6 className="title">
                         {projectDetails.overview.section_5[0]}
                       </h6>
                       <p>{projectDetails.overview.section_5[1]}</p>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
                 </section>
 
@@ -549,13 +545,13 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <AnimateOnReveal animation="content-rotate" delay=".2s">
+                    <div>
                       <h6 className="title">
                         {projectDetails.overview.section_6[0]}
                       </h6>
 
                       <p>{projectDetails.overview.section_6[1]}</p>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
                 </section>
 
@@ -567,7 +563,7 @@ const page = ({ params }) => {
                   />
 
                   <div className="info">
-                    <AnimateOnReveal animation="content-rotate">
+                    <div>
                       <h6 className="title">
                         {projectDetails.overview.section_7[0]}
                       </h6>
@@ -575,31 +571,31 @@ const page = ({ params }) => {
                       <p>{projectDetails.overview.section_7[1]}</p>
 
                       <p>{projectDetails.overview.section_7[2]}</p>
-                    </AnimateOnReveal>
+                    </div>
                   </div>
                 </section>
 
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <AnimateOnReveal animation="content-slide">
+                      <div>
                         <p>
                           <strong>
                             {projectDetails.overview.section_8.heading}
                           </strong>
                         </p>
                         <p>{projectDetails.overview.section_8.paragraph_1}</p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
                     <div className="col-2">
-                      <AnimateOnReveal animation="content-slide" delay=".2s">
+                      <div>
                         <p>{projectDetails.overview.section_8.paragraph_2}</p>
 
                         <p>
                           Like this project and want to chat about what we could
                           do for you? Hit us up!
                         </p>
-                      </AnimateOnReveal>
+                      </div>
                     </div>
                   </div>
                 </section>
