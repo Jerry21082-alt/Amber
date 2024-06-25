@@ -3,7 +3,14 @@
 import { projects } from "@/constants";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimateOnReveal from "@/components/AnimateOnReveal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const page = ({ params }) => {
   const { id } = params;
@@ -14,6 +21,21 @@ const page = ({ params }) => {
   const [uiMode, setUiMode] = useLocalStorage("uiMode", "ultra-mode");
 
   const projectDetails = getProductDetails();
+
+  const textRef = useRef();
+
+  useGSAP(() => {
+    gsap.set(textRef.current, {
+      y: 200,
+      opacity: 0,
+    });
+    gsap.to(textRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 2,
+      ease: "power1.inOut",
+    });
+  });
 
   useEffect(() => {
     setIsMounted(true);
@@ -100,6 +122,7 @@ const page = ({ params }) => {
                     data-from="-35%"
                     data-to="25%"
                     data-timing="quadOut"
+                    ref={textRef}
                   >
                     <h1 className="title">
                       {projectDetails.title1}
@@ -144,20 +167,26 @@ const page = ({ params }) => {
 
                   <div className="summary reveal">
                     <div className="col-1">
-                      <div>
+                      <AnimateOnReveal>
                         <p>
                           <strong>
                             {projectDetails.overview.section_1.intro}
                           </strong>
                         </p>
                         <p>{projectDetails.overview.section_1.paragraph_1}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <div>
+                      <AnimateOnReveal
+                        animationTo={{
+                          opacity: 1,
+                          y: 0,
+                          delay: 0.5,
+                        }}
+                      >
                         <p>{projectDetails.overview.section_1.paragraph_2}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
