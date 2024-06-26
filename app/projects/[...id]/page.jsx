@@ -133,7 +133,13 @@ const page = ({ params }) => {
                 </section>
                 <section className="intro reveal reveal-show">
                   <div className="credits">
-                    <div>
+                    <AnimateOnReveal
+                      animationTo={{
+                        opacity: 1,
+                        y: 0,
+                        delay: 1,
+                      }}
+                    >
                       <h6>
                         visit site---
                         <a
@@ -162,7 +168,7 @@ const page = ({ params }) => {
                       <span>Effiong Jerry</span>
                       <span className="title">Lead Back-end Developer:</span>
                       <span>Effiong Jerry</span>
-                    </div>
+                    </AnimateOnReveal>
                   </div>
 
                   <div className="summary reveal">
@@ -182,7 +188,7 @@ const page = ({ params }) => {
                         animationTo={{
                           opacity: 1,
                           y: 0,
-                          delay: 0.5,
+                          delay: 0.2,
                         }}
                       >
                         <p>{projectDetails.overview.section_1.paragraph_2}</p>
@@ -350,15 +356,21 @@ const page = ({ params }) => {
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <div>
+                      <AnimateOnReveal>
                         <p>{projectDetails.overview.section_2.paragraph_1}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <div>
+                      <AnimateOnReveal
+                        animationTo={{
+                          opacity: 1,
+                          y: 0,
+                          delay: 0.2,
+                        }}
+                      >
                         <p>{projectDetails.overview.section_2.paragraph_2}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
@@ -534,15 +546,27 @@ const page = ({ params }) => {
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <div>
+                      <AnimateOnReveal
+                        animationTo={{
+                          opacity: 1,
+                          y: 0,
+                          delay: 0,
+                        }}
+                      >
                         <p>{projectDetails.overview.section_4.paragraph_1}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
 
                     <div className="col-2">
-                      <div>
+                      <AnimateOnReveal
+                        animationTo={{
+                          opacity: 1,
+                          y: 0,
+                          delay: 0.2,
+                        }}
+                      >
                         <p>{projectDetails.overview.section_4.paragraph_2}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
@@ -607,24 +631,30 @@ const page = ({ params }) => {
                 <section className="module-copy reveal theme-reduce-top-padding reveal-show">
                   <div className="summary">
                     <div className="col-1">
-                      <div>
+                      <AnimateOnReveal>
                         <p>
                           <strong>
                             {projectDetails.overview.section_8.heading}
                           </strong>
                         </p>
                         <p>{projectDetails.overview.section_8.paragraph_1}</p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
                     <div className="col-2">
-                      <div>
+                      <AnimateOnReveal
+                        animationTo={{
+                          opacity: 1,
+                          y: 0,
+                          delay: 0.2,
+                        }}
+                      >
                         <p>{projectDetails.overview.section_8.paragraph_2}</p>
 
                         <p>
                           Like this project and want to chat about what we could
                           do for you? Hit us up!
                         </p>
-                      </div>
+                      </AnimateOnReveal>
                     </div>
                   </div>
                 </section>
