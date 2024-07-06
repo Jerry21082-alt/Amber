@@ -58,7 +58,7 @@ const Nav = ({ setUiMode, setMobileNavOpen, setShowAbout }) => {
               </li>
               <li className="about-li">
                 <a
-                  href="https://drive.google.com/file/d/1tYjJ_hKUSa_wSSc85WIGjGGhfz8S9Iin/view?usp=sharing"
+                  href="https://docs.google.com/document/d/1RhipAVOyWsDlf2o9-tXqdc3UzdjM6uKG/edit?usp=drive_link&ouid=108405425151733259634&rtpof=true&sd=true"
                   target="_blank"
                   aria-label="Resume"
                   className="link"
